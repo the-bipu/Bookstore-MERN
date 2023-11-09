@@ -28,11 +28,11 @@ app.use(cors());
 app.use('/books', booksRoute);
 
 mongoose
-    .connect(URI)
+    .connect(process.env.URI)
     .then(() => {
         console.log('App connected to database.');
-        app.listen(PORT, () => {
-            console.log(`App is listening to Port: ${PORT}`);
+        app.listen(process.env.PORT || 5555, () => {
+            console.log(`App is listening to Port: ${process.env.PORT}`);
         });
     })
     .catch(() => {
