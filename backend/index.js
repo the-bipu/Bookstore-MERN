@@ -1,5 +1,4 @@
 import express, { request, response } from "express";
-import { PORT, URI } from "./config.js";
 import cors from 'cors';
 import mongoose from 'mongoose';
 import booksRoute from './routes/booksRoute.js';
