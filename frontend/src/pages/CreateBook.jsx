@@ -22,7 +22,7 @@ const CreateBook = () => {
         };
         setLoading(true);
         axios
-            .post('https://bookstore-db.onrender.com/books', data)
+            .post('https://ebookstore-backend.up.railway.app/books', data)
             .then(() => {
                 setLoading(false);
                 enqueueSnackbar("Book created Successfully", { variant: 'success'});
