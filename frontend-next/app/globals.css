@@ -21,10 +21,59 @@
 body {
   font-family: 'Changa', sans-serif;
   color: #000;
-  background: rgb(242, 242, 242);
+  background: rgb(255, 255, 255);
 }
 
 * {
   font-family: 'Changa', sans-serif;
-  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all .2s linear;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  width: .7rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #0e5cb5;
+}
+
+section {
+  padding: 2rem 10%;
+}
+
+/* button styling */
+
+.btn {
+  display: inline-block;
+  margin-top: .7rem;
+  padding: .4rem 1.7rem;
+  font-size: 1.2rem;
+  border: 0.1rem solid #007bff;
+  background: #f0fdfa;
+  color: #007bff;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.btn:hover {
+  background: #007bff;
+  color: #fff;
 }
