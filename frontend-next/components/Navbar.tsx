@@ -39,12 +39,12 @@ const Navbar = () => {
           <FaRegWindowClose className='w-[2rem] h-[2rem] text-black' />
         </div>
 
-        <Link href="/" className='text-[18px] text-black font-semibold no-underline hover:text-[#0eb582]'>Home</Link>
-        <Link href="/Books" className='text-[18px] text-black font-semibold no-underline hover:text-[#0eb582]'>Books</Link>
-        <Link href="/Subjects" className='text-[18px] text-black font-semibold no-underline hover:text-[#0eb582]'>Subjects</Link>
-        <Link href="/AboutPage" className='text-[18px] text-black font-semibold no-underline hover:text-[#0eb582]'>About</Link>
-        <Link href="/Contact" className='text-[18px] text-black font-semibold no-underline hover:text-[#0eb582]'>Contact</Link>
-        <Link href="/Login" className='text-[18px] text-black font-semibold no-underline hover:text-[#0eb582]'>Login</Link>
+        <Link href="/" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Home</Link>
+        <Link href="/Books" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Books</Link>
+        <Link href="/Subjects" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Subjects</Link>
+        <Link href="/AboutPage" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>About</Link>
+        <Link href="/Contact" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Contact</Link>
+        <Link href="/Login" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Login</Link>
       </div>
 
     </div>
