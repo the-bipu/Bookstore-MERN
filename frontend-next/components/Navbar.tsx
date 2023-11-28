@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
 
-    <div className={`sticky top-0 z-40 w-full backdrop-blur h-[73px] flex items-center transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/95 supports-backdrop-blur:bg-white/60 dark:bg-transparent ${isActive ? 'active' : ''}`}>
+    <div className={`sticky top-0 z-40 w-full backdrop-blur h-[73px] flex items-center transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/95 ${isActive ? 'active' : ''}`}>
 
         <div className='w-[100vw] h-full flex items-center justify-between text-center lg:px-[80px] px-[20px]'>
           <a href="/" className='text-[25px] font-bold text-black'>EBooks📔</a>
