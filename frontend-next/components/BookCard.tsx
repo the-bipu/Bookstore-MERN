@@ -4,10 +4,10 @@ const BookCard = () => {
   return (
     <div>
         <div className='flex flex-col w-full h-auto'>
-          <div className='md:px-[5rem] px-[2rem] pt-0 pb-8 flex flex-wrap flex-row items-center justify-center gap-4'>
+          <div className='md:px-[5rem] px-[2rem] pt-0 pb-8 flex flex-wrap flex-row items-center justify-center gap-6'>
 
             {/* First Card */}
-            <div className='bg-[#fff] flex flex-col items-start w-[320px] shadow-xl'>
+            <div className='bg-[#fff] flex flex-col items-start md:w-[350px] w-[90%] shadow-xl'>
               <div>
                 <img src="/store-1.jpg" alt="Home Image" className='' />
               </div>
@@ -18,7 +18,7 @@ const BookCard = () => {
             </div>
 
             {/* Second Card */}
-            <div className='bg-[#fff] flex flex-col items-start w-[320px] shadow-xl'>
+            <div className='bg-[#fff] flex flex-col items-start md:w-[350px] w-[90%] shadow-xl'>
               <div>
                 <img src="/store-2.jpg" alt="Home Image" className='' />
               </div>
@@ -29,7 +29,7 @@ const BookCard = () => {
             </div>
 
             {/* Third Card */}
-            <div className='bg-[#fff] flex flex-col items-start w-[320px] shadow-xl'>
+            <div className='bg-[#fff] flex flex-col items-start md:w-[350px] w-[90%] shadow-xl'>
               <div>
                 <img src="/store-3.jpg" alt="Home Image" className='' />
               </div>
