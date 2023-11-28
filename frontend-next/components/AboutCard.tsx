@@ -2,31 +2,31 @@ import React from 'react'
 
 const AboutCard = () => {
   return (
-    <div>
-        <div className='flex flex-row w-full h-auto gap-8 p-20 pb-8 pt-0'>
+    <div className='text-justify'>
+        <div className='flex lg:flex-row flex-col justify-center w-full h-auto gap-8 pb-8 pt-0'>
             <div className='md:w-50% w-[90%] h-auto'>
               <img src="/store-1.jpg" alt="" className='' />
             </div>
             <div className='md:w-50% w-[90%] h-auto'>
-              Welcome to our house rental platform, where your perfect tenant is just a click away. List your property with detailed information and captivating visuals, allowing potential renters to explore, engage, and connect directly with you. From liking and exploring properties to initiating real-time conversations, finding the ideal home or tenant has never been easier!
+              Welcome to our book store website, where you can easily find the books that you need. Introducing the groundbreaking platform tailored for seamless management of university textbooks—our custom-designed website. This digital haven provides an organized repository for storing names, associated PDFs, and the respective semesters wherein each book is required. Created with the student community in mind, this platform aims to revolutionize the way we access, share, and manage academic resources.
             </div>
           </div>
           
-          <div className='flex flex-row w-full h-auto gap-8 p-20 pb-8 pt-0'>
+          <div className='flex lg:flex-row flex-col-reverse justify-center w-full h-auto gap-8 pb-8 pt-0'>
             <div className='md:w-50% w-[90%] h-auto'>
-              In a fast-paced world where convenience matters, this website streamlines the daunting process of finding or renting a house. For landlords, it offers a centralized platform to showcase their properties comprehensively, reaching a wider audience while facilitating direct interaction with potential tenants. This efficiency saves time, simplifies negotiations, and ensures a more tailored rental experience.
+                The necessity for such a platform stems from the perpetual struggle students face in accessing prescribed textbooks. Often, university bookstores run out of stock, leaving students scrambling to find alternative sources. By centralizing this repository online, we mitigate the hassle of physical searches, offering an accessible database that students can tap into at any time, from any location. This digital library not only promotes convenience but also facilitates a more eco-friendly approach by reducing the need for printed materials, aligning with the growing trend towards sustainability in education.
             </div>
             <div className='md:w-50% w-[90%] h-auto'>
               <img src="/store-2.jpg" alt="" className='' />
             </div>
           </div>
 
-          <div className='flex flex-row w-full h-auto gap-8 p-20 pb-8 pt-0'>
+          <div className='flex lg:flex-row flex-col justify-center w-full h-auto gap-8 pb-8 pt-0'>
             <div className='md:w-50% w-[90%] h-auto'>
               <img src="/store-3.jpg" alt="" className='' />
             </div>
             <div className='md:w-50% w-[90%] h-auto'>
-              On the other hand, for tenants seeking their next home, this platform provides a diverse array of rental options with detailed information, high-quality images, and direct communication channels with landlords. It simplifies the search process, empowering renters to make informed decisions and fostering a more transparent and efficient renting experience.
+                Moreover, the website bridges the gap between different academic semesters, providing a holistic view of the required textbooks across varied courses and study programs. With a dedicated section for each semester, students can easily navigate and locate the materials relevant to their ongoing courses. This functionality streamlines the process of obtaining course materials, ensuring that students have timely access to the resources they need for their studies. Additionally, it fosters collaboration and knowledge-sharing among peers by encouraging the exchange of supplementary study materials and resources, enhancing the overall academic experience within the university community.
             </div>
         </div>
     </div>
