@@ -6,16 +6,17 @@ const router = express.Router();
 // Route for posting books to the db
 router.post('/', async (request, response) => {
     try {
-        if (!request.body.title || !request.body.author || !request.body.publishyear)
+        if (!request.body.title || !request.body.author || !request.body.publishyear || !request.body.imgLink)
         {
             return response.status(400).send({
-                message: 'Send all required fields : title, author, publishyear',
+                message: 'Send all required fields : title, author, imgLink and publishyear',
             });
         }
 
         const newBook = {
             title: request.body.title,
             author: request.body.author,
+            imgLink: request.body.imgLink,
             publishyear: request.body.publishyear,
         };
         
