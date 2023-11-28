@@ -7,12 +7,7 @@ import { FaGithub, FaLinkedinIn, FaDribbble, FaTwitter, FaBehance } from "react-
 const Footer = () => {
   
   return (
-    <div id='footer-main' className="md:w-full w-[90%] h-auto text-black md:px-[5rem] px-0 py-[2rem]">
-        <div className='h-auto flex items-center justify-center'>
-            <div id='footer-head' className='w-[300px] h-[60px] bg-white font-semibold text-[20px] flex items-center justify-center mt-[-60px] mb-8 rounded-2xl'>
-                🍃Footer🍃
-            </div>
-        </div>
+    <div id='footer-main' className="md:w-full w-[90%] h-auto text-black md:px-[5rem] px-0 py-[2.5rem]">
         <div className='flex md:flex-row flex-col items-start justify-around flex-wrap md:p-0 p-6 md:gap-0 gap-6'>
             <div className='md:w-[35%] w-auto flex flex-col gap-3'>
                 <div className='flex flex-row items-center gap-1 text-[22px]'>
