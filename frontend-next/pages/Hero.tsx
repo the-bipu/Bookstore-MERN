@@ -2,19 +2,25 @@ import React from 'react'
 import BookCard from '../components/BookCard'
 import AboutCard from '@/components/AboutCard'
 import TotalDepartment from '@/components/TotalDepartment'
+import CustomSlider from '@/components/SliderHome'
 
 function Hero() {
   return (
     <div>
-      <div id='home-head' className='flex flex-col md:p-12 p-4 items-start justify-center'>
-        <div className=' md:w-[40%] w-[60%]'>
-          <div className='text-white text-[3rem] font-bold'>
+      {/* <div id='home-head' className='flex flex-col md:p-12 p-4 md:items-start items-center justify-center md:text-left text-center'>
+        <div className=' md:w-[40%] w-[80%]'>
+          <div className='text-white text-[2.6rem] font-bold'>
             BooksMania 🚀
           </div>
           <div className='text-[18px] text-white'>
             Welcome to our book store website, where you can easily find the books that you need. Introducing the groundbreaking platform tailored for seamless management of university textbooks—our custom-designed website.
           </div>
         </div>
+      </div> */}
+
+      <div className='flex flex-col items-center justify-center w-full'>
+        <CustomSlider />
+        <div className='text-black font-bold text-[25px]'>BooksMania 🚀</div>
       </div>
 
       <div className='flex flex-col text-center w-full pt-[35px] pb-[20px]'>
