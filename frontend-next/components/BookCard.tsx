@@ -7,7 +7,7 @@ const BookCard = () => {
           <div className='md:px-[5rem] px-[2rem] pt-0 pb-8 flex flex-wrap flex-row items-center justify-center gap-6'>
 
             {/* First Card */}
-            <div className='bg-[#fff] flex flex-col items-start md:w-[320px] w-[90%] shadow-xl'>
+            <div className='bg-[#fff] flex flex-col items-start w-[300px] shadow-xl'>
               <div>
                 <img src="/book-1.png" alt="Home Image" className='' />
               </div>
@@ -18,7 +18,7 @@ const BookCard = () => {
             </div>
 
             {/* Second Card */}
-            <div className='bg-[#fff] flex flex-col items-start md:w-[320px] w-[90%] shadow-xl'>
+            <div className='bg-[#fff] flex flex-col items-start w-[300px] shadow-xl'>
               <div>
                 <img src="/book-2.png" alt="Home Image" className='' />
               </div>
@@ -29,7 +29,7 @@ const BookCard = () => {
             </div>
 
             {/* Third Card */}
-            <div className='bg-[#fff] flex flex-col items-start md:w-[320px] w-[90%] shadow-xl'>
+            <div className='bg-[#fff] flex flex-col items-start w-[300px] shadow-xl'>
               <div>
                 <img src="/book-3.png" alt="Home Image" className='' />
               </div>
