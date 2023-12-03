@@ -1,6 +1,6 @@
 'use client'
 import React, { useRef } from 'react';
-import 
+import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -33,22 +33,22 @@ const CustomSlider: React.FC = () => {
     };
   
     return (
-      <div className='w-full flex justify-center items-center'>
+      <div className='w-full flex justify-center items-center py-8'>
         <Slider {...settings} className="w-[80%] max-w-screen-lg">
             <div>
-            <img src="/bg-home.png" alt="Image" className="md:w-[500px] w-[300px] h-auto rounded-lg" />
+              <img src="/bg-home.png" alt="Image" className="md:w-[500px] w-[300px] h-auto rounded-lg" />
             </div>
             <div>
-            <img src="/bg-home.png" alt="Image" className="md:w-[500px] w-[300px] h-auto rounded-lg" />
+              <img src="/bg-home.png" alt="Image" className="md:w-[500px] w-[300px] h-auto rounded-lg" />
             </div>
             <div>
-            <img src="/bg-home.png" alt="Image" className="md:w-[500px] w-[300px] h-auto rounded-lg" />
+              <img src="/bg-home.png" alt="Image" className="md:w-[500px] w-[300px] h-auto rounded-lg" />
             </div>
             <div>
-            <img src="/bg-home.png" alt="Image" className="md:w-[500px] w-[300px] h-auto rounded-lg" />
+              <img src="/bg-home.png" alt="Image" className="md:w-[500px] w-[300px] h-auto rounded-lg" />
             </div>
             <div>
-            <img src="/bg-home.png" alt="Image" className="md:w-[500px] w-[300px] h-auto rounded-lg" />
+              <img src="/bg-home.png" alt="Image" className="md:w-[500px] w-[300px] h-auto rounded-lg" />
             </div>
       </Slider>
       </div>
