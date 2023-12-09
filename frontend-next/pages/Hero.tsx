@@ -19,8 +19,10 @@ function Hero() {
       </div> */}
 
       <div className='flex flex-col items-center justify-center w-full'>
-        <CustomSlider />
-        <div className='text-black font-bold text-[25px]'>BooksMania 🚀</div>
+        <div className='flex flex-row items-center justify-center'>
+          <img src="ebook-concept-art.jpg" alt="" className='img-frontPage' />
+          <div className='text-black font-bold text-[25px]'>BooksMania 🚀</div>
+        </div>
       </div>
 
       <div className='flex flex-col text-center w-full pt-[35px] pb-[20px]'>
