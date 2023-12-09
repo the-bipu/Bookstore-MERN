@@ -145,3 +145,8 @@ section {
   text-transform: capitalize;
   color: #444;
 }
+
+.img-frontPage {
+  width: auto;
+  height: 400px;
+}
