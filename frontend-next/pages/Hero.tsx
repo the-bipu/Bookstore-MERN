@@ -18,11 +18,11 @@ function Hero() {
         </div>
       </div> */}
 
-      <div className='flex flex-col items-center justify-center w-full'>
-        <div className='flex flex-row items-center justify-center'>
-          <img src="ebook-concept-art.jpg" alt="" className='img-frontPage' />
-          <div className='text-black font-bold text-[25px]'>BooksMania 🚀</div>
-        </div>
+      <div className={`header__main`}>
+          <div className='text-black font-bold text-[25px] w-[50%] pl-40'>BooksMania 🚀</div>
+          <div className='text-[18px] text-black w-[50%] pl-40'>
+            Welcome to our book store website, where you can easily find the books that you need. Introducing the groundbreaking platform tailored for seamless management of university textbooks—our custom-designed website.
+          </div>
       </div>
 
       <div className='flex flex-col text-center w-full pt-[35px] pb-[20px]'>
