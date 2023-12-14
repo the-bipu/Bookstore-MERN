@@ -3,7 +3,7 @@ import React from 'react'
 
 function Books() {
   return (
-    <div>
+    <div className='gradientLinear'>
       <div className='heading-link'>
         <div className='py-6'>
           <h3>Our Books</h3>
