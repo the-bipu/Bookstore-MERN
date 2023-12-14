@@ -62,7 +62,7 @@ section {
 /* Home Page */
 
 #home-head {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.374),rgba(0, 0, 0, 0.3)) , url(/library-bg1.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.374), rgba(0, 0, 0, 0.3)), url(/library-bg1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -158,16 +158,24 @@ section {
   transform: skewY(3deg);
 }
 
-/* .header__main {
-  width: 100%;
-  height: 450px;
-  background: url(/library-bg1.jpg);
-  background-repeat: no-repeat;
+.parallax--main {
+  background: url('/library2.jpg');
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 700px;
+  width: 100vw;
+}
 
+.parallax--container {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-} */
+  gap: 1rem;
+  text-align: center;
+  color: white;
+}
