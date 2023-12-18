@@ -1,58 +1,45 @@
 import React from 'react'
+import { MdOutlineDelete } from 'react-icons/md'
+import { Link } from 'react-router-dom'
+import { PiBookOpenTextLight } from 'react-icons/pi';
+import { BiUserCircle } from 'react-icons/bi';
+import { AiOutlineEdit } from "react-icons/ai";
+import { BsInfoCircle } from "react-icons/bs";
 
-const BookCard = () => {
+interface Book {
+  _id: string | null | undefined;
+  publishyear: string; // Assuming publishyear is a string, update the type accordingly
+  title: string;
+  author: string;
+  // Add other properties with their respective types
+}
+
+interface BookCardProps {
+  book: Book;
+}
+
+const BookCard: React.FC<BookCardProps> = ({ book }) => {
   return (
-    <div>
-        <div className='flex flex-col w-full h-auto'>
-          <div className='md:px-[5rem] px-[2rem] pt-0 pb-12 flex flex-wrap flex-row items-center justify-center gap-6'>
-
-            {/* First Card */}
-            <div className='bg-[#fff] flex flex-col items-start w-[250px] shadow-xl'>
-              <div>
-                <img src="/book-1.png" alt="Home Image" className='' />
-              </div>
-              <div className='p-2 flex flex-col items-start justify-start text-[14px]'>
-                <div>THE SUBTLE ART OF NOT GIVING A FUCK</div>
-                <div>SEMESTER-1</div>
-              </div>
-            </div>
-
-            {/* Second Card */}
-            <div className='bg-[#fff] flex flex-col items-start w-[250px] shadow-xl'>
-              <div>
-                <img src="/book-2.png" alt="Home Image" className='' />
-              </div>
-              <div className='p-2 flex flex-col items-start justify-start text-[14px]'>
-                <div>THE SUBTLE ART OF NOT GIVING A FUCK</div>
-                <div>SEMESTER-1</div>
-              </div>
-            </div>
-
-            {/* Third Card */}
-            <div className='bg-[#fff] flex flex-col items-start w-[250px] shadow-xl'>
-              <div>
-                <img src="/book-3.png" alt="Home Image" className='' />
-              </div>
-              <div className='p-2 flex flex-col items-start justify-start text-[14px]'>
-                <div>THE SUBTLE ART OF NOT GIVING A FUCK</div>
-                <div>SEMESTER-1</div>
-              </div>
-            </div>
-
-            {/* Fourth Card */}
-            <div className='bg-[#fff] flex flex-col items-start w-[250px] shadow-xl'>
-              <div>
-                <img src="/book-4.png" alt="Home Image" className='' />
-              </div>
-              <div className='p-2 flex flex-col items-start justify-start text-[14px]'>
-                <div>THE SUBTLE ART OF NOT GIVING A FUCK</div>
-                <div>SEMESTER-1</div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
+    <div key={book._id} className='bg-[#fff] flex flex-col items-start w-[280px] shadow-xl'>
+      <div>
+        <img src="/book-1.png" alt="Home Image" className='' />
+      </div>
+      <h2 className="absolute top-1 right-2 px-4 py-1 bg-red-300 rounded-lg">
+        {book.publishyear}
+      </h2>
+      <h4 className="my-2 text-gray-500">{book._id}</h4>
+      <div className="flex justify-start items-center gap-x-2">
+        <PiBookOpenTextLight className="text-red-300 text-2xl" />
+        <h2 className="my-1">{book.title}</h2>
+      </div>
+      <div className="flex justify-start items-center gap-x-2">
+        <BiUserCircle className="text-red-300 text-2xl" />
+        <h2 className="my-1">{book.author}</h2>
+      </div>
+      <a href={`/books/${book._id}`}>Show More</a>
+      {/* <Link to={`/books/details/${book._id}`}>
+        <BsInfoCircle className="text-2xl text-green-800 hover:text-black" />
+      </Link> */}
     </div>
   )
 }

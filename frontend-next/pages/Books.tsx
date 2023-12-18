@@ -1,7 +1,27 @@
+import BookCard from '@/components/BookCard';
+import BookCardTotal from '@/components/BookCardTotal';
 import TotalDepartment from '@/components/TotalDepartment'
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
 function Books() {
+  const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    axios
+      .get('https://ebookstore-backend.up.railway.app/books')
+      .then((response) => {
+        setBooks(response.data.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <div className='gradientLinear'>
       <div className='heading-link'>
@@ -12,13 +32,13 @@ function Books() {
       </div>
       <div className='py-8'>
         <div className='lg:text-[25px] text-[20px] font-semibold mt-4 mb-4 text-black text-center'>
-              Our <span className='text-[#22CFB8]'>Departments 🍃</span>
-          </div>
-          <div className='mb-8 text-black text-center'>
-              Presented herein are some of the most prevalent and sought-after sets in contemporary times.
-          </div>
+          Our <span className='text-[#22CFB8]'>Departments 🍃</span>
+        </div>
+        <div className='mb-8 text-black text-center'>
+          Presented herein are some of the most prevalent and sought-after sets in contemporary times.
+        </div>
 
-        <TotalDepartment />
+        <BookCardTotal books={books} /> 
       </div>
     </div>
   )
