@@ -1,12 +1,29 @@
-import React from 'react'
-import BookCard from '../components/BookCard'
-import AboutCard from '@/components/AboutCard'
+'use client';
+import React, { useEffect, useState } from 'react'
 import TotalDepartment from '@/components/TotalDepartment'
-import CustomSlider from '@/components/SliderHome'
 import AboutSite from '@/components/AboutSite'
 import Parallax from '@/components/Parallax'
+import BookCardTotal from '@/components/BookCardTotal'
+import axios from 'axios'
 
 function Hero() {
+  const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    axios
+      .get('https://ebookstore-backend.up.railway.app/books')
+      .then((response) => {
+        setBooks(response.data.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <div className='gradientLinear'>
       {/* Main Image of the Home Page and it's Content */}
@@ -25,7 +42,7 @@ function Hero() {
           Presented herein are some of the most prevalent and sought-after sets in contemporary times.
         </div>
 
-        <BookCard />
+        <BookCardTotal books={books} />
       </div>
 
       {/* About Site Section ( Still need modification ) */}
