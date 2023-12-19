@@ -18,7 +18,7 @@ const EditBook = () => {
     
     useEffect(() => {
       setLoading(true);
-      axios.get(`https://ebookstore-backend.up.railway.app/books/${id}`)
+      axios.get(`https://ebookstore-backend.up.railway.app/books/details/${id}`)
       .then((response) => {
         setTitle(response.data.title);
         setAuthor(response.data.author);
@@ -40,7 +40,7 @@ const EditBook = () => {
         };
         setLoading(true);
         axios
-            .put(`https://bookstore-db.onrender.com/books/${id}`, data)
+            .put(`https://ebookstore-backend.up.railway.app/books/update/${id}`, data)
             .then(() => {
                 setLoading(false);
                 enqueueSnackbar("Book Edited Successfully", { variant: 'success'});
