@@ -36,10 +36,10 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
         <BiUserCircle className="text-red-300 text-2xl" />
         <h2 className="my-1">{book.author}</h2>
       </div>
-      <a href={`/books/${book._id}`}>Show More</a>
-      {/* <Link to={`/books/details/${book._id}`}>
-        <BsInfoCircle className="text-2xl text-green-800 hover:text-black" />
-      </Link> */}
+      <a href={`/books/delete/${book._id}`}>
+        <MdOutlineDelete className='text-2xl text-red-600' />
+      </a>
+      <a href={`/books/details/${book._id}`}>Show More</a>
     </div>
   )
 }

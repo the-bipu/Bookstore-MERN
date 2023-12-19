@@ -1,9 +1,13 @@
+'use client';
 import Hero from '@/pages/Hero'
+import { SnackbarProvider } from 'notistack'
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-    </main>
+    <SnackbarProvider>
+      <main>
+        <Hero />
+      </main>
+    </SnackbarProvider>
   )
 }
