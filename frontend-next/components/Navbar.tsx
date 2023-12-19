@@ -29,7 +29,7 @@ const Navbar = () => {
                 <Link href="/Subjects" className='text-[20px] text-black font-medium no-underline'>Subjects</Link>
                 <Link href="/About" className='text-[20px] text-black font-medium no-underline'>About</Link>
                 <Link href="/Contact" className='text-[20px] text-black font-medium no-underline'>Contact</Link>
-                <Link href="/Login" className='text-[20px] text-black font-medium no-underline'>Login</Link>
+                <Link href="/AddBook" className='text-[20px] text-black font-medium no-underline'>Add Book</Link>
             </nav>
 
       </div>
