@@ -30,7 +30,7 @@ router.post('/', async (request, response) => {
 });
 
 // Route for getting all books from the db
-router.get('/', async (request, response) => {
+router.get('/all', async (request, response) => {
     try {
         const books = await Book.find({});
 
@@ -47,7 +47,7 @@ router.get('/', async (request, response) => {
 });
 
 // Route for getting one book by id from db
-router.get('/:id', async (request, response) => {
+router.get('/details/:id', async (request, response) => {
     try {
         const { id } = request.params;
         const book = await Book.findById(id);
@@ -60,7 +60,7 @@ router.get('/:id', async (request, response) => {
 });
 
 // Route for update a book
-router.put('/:id', async (request, response) => {
+router.put('/update/:id', async (request, response) => {
     try {
         if (!request.body.title || !request.body.author || !request.body.publishyear)
         {
@@ -86,7 +86,7 @@ router.put('/:id', async (request, response) => {
 });
 
 // Route for delete a book
-router.delete('/:id', async (request, response) => {
+router.delete('/delete/:id', async (request, response) => {
     try {
         const { id } = request.params;
 
