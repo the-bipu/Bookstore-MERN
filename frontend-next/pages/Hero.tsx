@@ -13,7 +13,7 @@ function Hero() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get('https://ebookstore-backend.up.railway.app/books')
+      .get('https://ebookstore-backend.up.railway.app/books/all')
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);

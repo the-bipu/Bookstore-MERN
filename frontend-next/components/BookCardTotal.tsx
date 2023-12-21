@@ -6,6 +6,7 @@ type BookItem = {
     publishyear: string;
     title: string;
     author: string;
+    imgLink: string;
 };
 
 interface Book extends BookItem {

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useSnackbar } from 'notistack';
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 const AddBook = () => {
     const [title, setTitle] = useState('');
@@ -10,6 +11,7 @@ const AddBook = () => {
     const [loading, setLoading] = useState(false);
 
     const { enqueueSnackbar } = useSnackbar();
+    const router = useRouter();
 
     const handleSaveBook = () => {
         const data = {
@@ -24,7 +26,7 @@ const AddBook = () => {
             .then(() => {
                 setLoading(false);
                 enqueueSnackbar("Book created Successfully", { variant: 'success'});
-                window.location.href='/';
+                router.push('/');
             })
             .catch((error) => {
                 setLoading(false);
@@ -35,7 +37,6 @@ const AddBook = () => {
   return (
     <div className='p-4'>
         <h1 className='text-3xl my-4'>Create Book</h1>
-        {loading ? '' : ''}
         <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>
             <div className='my-4'>
                 <label className='text-xl mr-4 text-gray-500'>Title</label>
