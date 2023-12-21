@@ -26,7 +26,7 @@ const Navbar = () => {
               <div className={`absolute top-6 right-8 cursor-pointer text-[#444] hidden ${isActive ? 'block' : ''}`} onClick={toggleNavbar}><FaRegWindowClose /></div>
                 <Link href='/' className='text-[20px] text-black font-medium no-underline'>Home</Link>
                 <Link href="/Books" className='text-[20px] text-black font-medium no-underline'>Books</Link>
-                <Link href="/Subjects" className='text-[20px] text-black font-medium no-underline'>Subjects</Link>
+                <Link href="/Departments" className='text-[20px] text-black font-medium no-underline'>Departments</Link>
                 <Link href="/About" className='text-[20px] text-black font-medium no-underline'>About</Link>
                 <Link href="/Contact" className='text-[20px] text-black font-medium no-underline'>Contact</Link>
                 <Link href="/AddBook" className='text-[20px] text-black font-medium no-underline'>Add Book</Link>
@@ -41,7 +41,7 @@ const Navbar = () => {
 
         <Link href="/" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Home</Link>
         <Link href="/Books" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Books</Link>
-        <Link href="/Subjects" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Subjects</Link>
+        <Link href="/Departments" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Departments</Link>
         <Link href="/AboutPage" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>About</Link>
         <Link href="/Contact" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Contact</Link>
         <Link href="/Login" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Login</Link>
