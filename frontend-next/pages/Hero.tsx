@@ -13,7 +13,7 @@ function Hero() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get('https://ebookstore-backend.up.railway.app/books/all')
+      .get('http://localhost:5555/books/all')
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
@@ -22,7 +22,7 @@ function Hero() {
         console.log(error);
         setLoading(false);
       });
-  }, []);
+    }, []);
 
   return (
     <div className='gradientLinear'>

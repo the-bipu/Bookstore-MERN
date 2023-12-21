@@ -11,9 +11,10 @@ function Books() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get('https://ebookstore-backend.up.railway.app/books/all')
+      .get('http://localhost:5555/books/all')
       .then((response) => {
         setBooks(response.data.data);
+        console.log(books);
         setLoading(false);
       })
       .catch((error) => {

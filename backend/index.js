@@ -2,6 +2,7 @@ import express, { request, response } from "express";
 import cors from 'cors';
 import mongoose from 'mongoose';
 import booksRoute from './routes/booksRoute.js';
+import { URI, PORT } from './config.js';
 
 const app = express();
 app.use(express.json());
@@ -20,11 +21,11 @@ app.get('/', (request, response) => {
 app.use('/books', booksRoute);
 
 mongoose
-    .connect(process.env.URI)
+    .connect(URI)
     .then(() => {
         console.log('App connected to database.');
         app.listen(process.env.PORT || 5555, () => {
-            console.log(`App is listening to Port: ${process.env.PORT}`);
+            console.log(`App is listening to Port: ${PORT}`);
         });
     })
     .catch((error) => {
