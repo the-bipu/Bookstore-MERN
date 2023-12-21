@@ -11,7 +11,7 @@ function Books() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get('https://ebookstore-backend.up.railway.app/books')
+      .get('https://ebookstore-backend.up.railway.app/books/all')
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
@@ -38,7 +38,7 @@ function Books() {
           Presented herein are some of the most prevalent and sought-after sets in contemporary times.
         </div>
 
-        <BookCardTotal books={books} /> 
+        <BookCardTotal books={books} />
       </div>
     </div>
   )
