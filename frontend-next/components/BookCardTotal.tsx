@@ -3,7 +3,7 @@ import BookCard from "./BookCard";
 
 type BookItem = {
     _id: Key | null | undefined;
-    publishyear: string;
+    publishyear: number;
     title: string;
     author: string;
     imgLink: string;

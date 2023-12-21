@@ -1,16 +1,13 @@
 'use client';
 import React, { useState } from 'react'
-import { MdOutlineDelete } from 'react-icons/md'
 import Link from 'next/link';
-import { PiBookOpenTextLight } from 'react-icons/pi';
-import { BiUserCircle } from 'react-icons/bi';
 import axios from 'axios';
 import { useSnackbar } from 'notistack';
 import { useRouter } from 'next/navigation';
 
 interface Book {
   _id: string | null | undefined;
-  publishyear: string;
+  publishyear: number;
   title: string;
   author: string;
   imgLink: string;
@@ -48,25 +45,25 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
   }
 
   return (
-    <div key={book._id} className='bg-[#fff] flex flex-col items-start w-[280px] shadow-xl'>
+    <div key={book._id} className='bg-[#fff] flex flex-col w-[280px] shadow-xl rounded-md'>
       <div>
-        <img src={`${book.imgLink}`} alt='image' className='w-[280px] h-full' />
+        <h2 className="absolute px-4 py-1 bg-black text-white rounded-lg z-10 m-2">
+          {book.publishyear}
+        </h2>
+        <Link href={`/Details/${book._id}`} className='absolute bg-slate-500 text-black rounded-lg px-4 py-1 m-2'>Show More</Link>
+        <img src={`${book.imgLink}`} alt='image' className='w-[280px] h-[300px] object-cover z-0 rounded-md' />
       </div>
-      <h2 className="absolute top-1 right-2 px-4 py-1 bg-red-300 rounded-lg">
-        {book.publishyear}
-      </h2>
-      <div className="flex justify-start items-center gap-x-2">
-        <PiBookOpenTextLight className="text-red-300 text-2xl" />
-        <h2 className="my-1">{book.title}</h2>
-      </div>
-      <div className="flex justify-start items-center gap-x-2">
-        <BiUserCircle className="text-red-300 text-2xl" />
-        <h2 className="my-1">{book.author}</h2>
-      </div>
-      {/* <button onClick={handleDeleteBook}>
+
+      <div className='p-4 flex items-center justify-center flex-col'>
+        <div className="flex justify-start items-center flex-col">
+          <h2 className="my-1 text-[1.3rem] font-semibold">{book.title}</h2>
+          <h2 className="text-[1rem]">{book.author}</h2>
+        </div>          
+
+        {/* <button onClick={handleDeleteBook}>
         <MdOutlineDelete className='text-2xl text-red-600' />
       </button> */}
-      <Link href={`/Details/${book._id}`}>Show More</Link>
+      </div>
     </div>
   )
 }
