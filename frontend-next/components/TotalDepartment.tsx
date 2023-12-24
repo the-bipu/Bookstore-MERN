@@ -1,47 +1,56 @@
 import React from 'react'
+import departments from '../public/departments.json'
+
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const TotalDepartment = () => {
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+
+  };
+
   return (
     <div>
-        <div className='flex flex-col w-full h-auto'>
-          <div className='md:px-[5rem] px-[2rem] pt-0 pb-8 flex flex-wrap flex-row items-center justify-center gap-6'>
+      <div className='w-full flex justify-center items-center'>
 
-            {/* First Card */}
-            <div className='bg-[#fff] flex flex-col items-start w-auto shadow-xl'>
+        <Slider {...settings} className="w-[80%] max-w-screen-lg">
+          {departments.map((department, index) => (
+            <div className='md:w-[500px] w-[300px] h-auto outline-none p-4' key={index}>
               <div className='p-4 pb-0'>
-                <img src="/book-1.png" alt="Home Image" className='h-[350px] shadow-inner' />
+                <img src={`/book-${index + 1}.png`} alt={`Book ${index + 1}`} className='shadow-inner h-[350px] w-[300px]' />
               </div>
               <div className='p-4 flex flex-col items-center justify-center w-full'>
-                <div>Computer Science</div>
-                <div>SEMESTER-1</div>
+                <div>{department.Name}</div>
               </div>
             </div>
+          ))}
+        </Slider>
 
-            {/* Second Card */}
-            <div className='bg-[#fff] flex flex-col items-start w-auto shadow-xl'>
-              <div className='p-4 pb-0'>
-                <img src="/book-2.png" alt="Home Image" className='h-[350px] shadow-inner' />
-              </div>
-              <div className='p-4 flex flex-col items-center justify-center w-full'>
-                <div>Computer Science</div>
-                <div>SEMESTER-1</div>
-              </div>
-            </div>
-
-            {/* Third Card */}
-            <div className='bg-[#fff] flex flex-col items-start w-auto shadow-xl'>
-              <div className='p-4 pb-0'>
-                <img src="/book-3.png" alt="Home Image" className='h-[350px] shadow-inner' />
-              </div>
-              <div className='p-4 flex flex-col items-center justify-center w-full'>
-                <div>Computer Science</div>
-                <div>SEMESTER-1</div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
+      </div>
     </div>
   )
 }
