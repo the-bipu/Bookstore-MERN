@@ -37,14 +37,16 @@ const TotalDepartment = () => {
     <div>
       <div className='w-full flex justify-center items-center'>
 
-        <Slider {...settings} className="w-[80%] max-w-screen-lg">
+        <Slider {...settings} className="w-[80%] max-w-screen-lg mb-8 pb-6">
           {departments.map((department, index) => (
-            <div className='md:w-[500px] w-[300px] h-auto outline-none p-4' key={index}>
-              <div className='p-4 pb-0'>
-                <img src={`/book-${index + 1}.png`} alt={`Book ${index + 1}`} className='shadow-inner h-[350px] w-[300px]' />
-              </div>
-              <div className='p-4 flex flex-col items-center justify-center w-full'>
-                <div>{department.Name}</div>
+            <div className='w-full h-auto outline-none p-2' key={index}>
+              <div className='p-2 bg-white shadow-lg'>
+                <div className='p-4 pb-0'>
+                  <img src={`/book-${index + 1}.png`} alt={`Book ${index + 1}`} className='shadow-inner h-[350px] w-[270px]' />
+                </div>
+                <div className='p-4 flex flex-col items-center justify-center w-full'>
+                  <div>{department.Name}</div>
+                </div>
               </div>
             </div>
           ))}
