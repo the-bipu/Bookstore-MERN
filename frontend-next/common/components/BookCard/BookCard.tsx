@@ -48,33 +48,47 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
   }
 
   return (
-    <div key={book._id} className={`relative bg-[#fff] flex flex-col w-[260px] h-[340px] shadow-xl rounded-md cardDiv`}>
-      <div>
-        <h2 className="absolute px-4 py-1 left-0 bg-black text-white rounded-lg z-10 m-2">
-          {book.publishyear}
-        </h2>
-        <Link href={`/Details/${book._id}`} className='absolute bg-slate-500 text-black rounded-lg px-4 py-1 m-2 right-0'>Show More</Link>
-        <img src={`${book.imgLink}`} alt='image' className='w-[260px] h-[340px] object-cover z-5 rounded-md' />
+    <>
+      <div key={book._id} id='bookscard' className='p-2 shadow-lg'>
 
-        <div className={`w-full h-[4rem] absolute bottom-0 text-center bg-white nameDiv`}>
-          <h2 className="text-[1.3rem] font-semibold">{book.title}</h2>
-          <h2 className="text-[1rem]">{book.author}</h2>
-        </div>
+          <img
+            src={`${book.imgLink}`}
+            alt='image'
+            className='rounded-md object-cover'
+          />
 
       </div>
+    </>
+    // <div key={book._id} className={`relative bg-[#fff] flex flex-col w-[260px] h-[340px] shadow-xl rounded-md cardDiv`}>
+    //   <div>
+    //     <h2 className="absolute px-4 py-1 left-0 bg-black text-white rounded-lg z-10 m-2">
+    //       {book.publishyear}
+    //     </h2>
+    //     <Link href={`/Details/${book._id}`} className='absolute bg-slate-500 text-black rounded-lg px-4 py-1 m-2 right-0'>
+    //       Show More
+    //     </Link>
 
-      {/* <div className='p-4 py-2 flex items-center justify-center flex-col'>
-        <div className="flex justify-start items-center flex-col">
-          <h2 className="my-1 text-[1.3rem] font-semibold">{book.title}</h2>
-          <h2 className="text-[1rem]">{book.author}</h2>
-        </div>
+    //     {/* <img src={`${book.imgLink}`} alt='image' className='w-[260px] h-[340px] object-cover z-5 rounded-md' /> */}
 
-        <button onClick={handleDeleteBook}>
-          <MdOutlineDelete className='text-2xl text-red-600' />
-        </button>
-      </div> */}
+    //     <div className={`w-full h-[4rem] absolute bottom-0 text-center bg-white nameDiv`}>
+    //       <h2 className="text-[1.3rem] font-semibold">{book.title}</h2>
+    //       <h2 className="text-[1rem]">{book.author}</h2>
+    //     </div>
 
-    </div>
+    //   </div>
+
+    //   {/* <div className='p-4 py-2 flex items-center justify-center flex-col'>
+    //     <div className="flex justify-start items-center flex-col">
+    //       <h2 className="my-1 text-[1.3rem] font-semibold">{book.title}</h2>
+    //       <h2 className="text-[1rem]">{book.author}</h2>
+    //     </div>
+
+    //     <button onClick={handleDeleteBook}>
+    //       <MdOutlineDelete className='text-2xl text-red-600' />
+    //     </button>
+    //   </div> */}
+
+    // </div>
   )
 }
 
