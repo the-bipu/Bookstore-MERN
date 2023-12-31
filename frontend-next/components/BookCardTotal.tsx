@@ -1,5 +1,5 @@
 import React, { Key } from "react";
-import BookCard from "./BookCard";
+import BookCard from "../common/components/BookCard/BookCard";
 
 type BookItem = {
     _id: Key | null | undefined;

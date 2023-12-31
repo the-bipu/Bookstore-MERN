@@ -1,4 +1,4 @@
-import BookCard from '@/components/BookCard';
+import BookCard from '@/common/components/BookCard/BookCard';
 import BookCardTotal from '@/components/BookCardTotal';
 import TotalDepartment from '@/components/TotalDepartment'
 import axios from 'axios';
