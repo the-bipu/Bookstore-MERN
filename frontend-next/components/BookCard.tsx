@@ -6,6 +6,8 @@ import { useSnackbar } from 'notistack';
 import { useRouter } from 'next/navigation';
 import { MdOutlineDelete } from 'react-icons/md';
 
+import './BookCardModule.scss';
+
 interface Book {
   _id: string | null | undefined;
   publishyear: number;
@@ -52,7 +54,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
           {book.publishyear}
         </h2>
         <Link href={`/Details/${book._id}`} className='absolute bg-slate-500 text-black rounded-lg px-4 py-1 m-2 right-0'>Show More</Link>
-        <img src={`${book.imgLink}`} alt='image' className='w-[260px] h-[340px] object-cover z-0 rounded-md' />
+        <img src={`${book.imgLink}`} alt='image' className='w-[260px] h-[340px] object-cover z-5 rounded-md' />
 
         <div className={`w-full h-[4rem] absolute bottom-0 text-center bg-white nameDiv`}>
           <h2 className="text-[1.3rem] font-semibold">{book.title}</h2>

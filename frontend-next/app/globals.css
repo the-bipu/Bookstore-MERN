@@ -179,18 +179,3 @@ section {
   text-align: center;
   color: white;
 }
-
-.cardDiv {
-  transition-duration: 3s;
-  transition-timing-function: ease;
-}
-
-.cardDiv:hover .nameDiv {
-  display: block;
-}
-
-.cardDiv .nameDiv {
-  display: none;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-}

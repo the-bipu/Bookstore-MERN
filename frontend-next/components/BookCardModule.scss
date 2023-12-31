@@ -1,0 +1,18 @@
+.cardDiv {
+    
+    .nameDiv {
+        // display: none;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        bottom: -64px;
+        z-index: -5;
+    }
+
+  &:hover {
+    .nameDiv {
+    //   display: block;
+      bottom: 0px;
+      z-index: 10;
+    }
+  }
+}
