@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './ParallaxModule.scss'
+
 const Parallax = () => {
   return (
     <div className='parallax--main'>

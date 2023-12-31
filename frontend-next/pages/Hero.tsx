@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import TotalDepartment from '@/components/TotalDepartment'
 import AboutSite from '@/components/AboutSite'
-import Parallax from '@/components/Parallax'
+import Parallax from '@/common/components/Parallax/Parallax'
 import BookCardTotal from '@/components/BookCardTotal'
 import axios from 'axios'
 
