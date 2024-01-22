@@ -3,35 +3,38 @@ import Link from 'next/link'
 import React, { useState } from 'react';
 
 import { FaBars, FaRegWindowClose } from "react-icons/fa";
+import { FaPenNib } from "react-icons/fa";
+import { GiBookStorm } from "react-icons/gi";
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
-  
+
   const toggleNavbar = () => {
     setIsActive(!isActive);
   };
 
   return (
 
-    <div className={`sticky top-0 z-40 w-full backdrop-blur h-[73px] flex items-center transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] bg-white/95 ${isActive ? 'active' : ''}`}>
+    <div className={`absolute top-0 z-40 w-full h-[73px] flex items-center justify-center transition-colors duration-500 lg:z-50 lg:border-b bg-transparent ${isActive ? 'active' : ''}`}>
 
-        <div className='w-[100vw] h-full flex items-center justify-between text-center lg:px-[80px] px-[20px]'>
-          <a href="/" className='text-[25px] font-bold text-black'>EBooks📔</a>
+      <div className='w-9/12 h-full flex items-center justify-between text-center lg:px-[80px] px-[20px]'>
+        <a href="/" className='text-2xl flex flex-row items-center justify-center gap-2 font-bold text-white righteous'>
+          <GiBookStorm /> 
+          <span>BookStorm</span>
+        </a>
 
-            <div id="menu-btn" onClick={toggleNavbar} className="text-[25px] cursor-pointer text-white lg:hidden block">
-              <FaBars className='w-[1.5rem] h-[1.5rem] text-black' />
-            </div>
+        <div id="menu-btn" onClick={toggleNavbar} className="text-[25px] cursor-pointer text-white lg:hidden block">
+          <FaBars className='w-[1.5rem] h-[1.5rem] text-white' />
+        </div>
 
-            <nav className={`lg:flex hidden flex-row gap-8 ${isActive ? 'flex-col items-center' : ''}`}>
-              <div className={`absolute top-6 right-8 cursor-pointer text-[#444] hidden ${isActive ? 'block' : ''}`} onClick={toggleNavbar}><FaRegWindowClose /></div>
-                <Link href='/' className='text-[20px] text-black font-medium no-underline'>Home</Link>
-                <Link href="/Books" className='text-[20px] text-black font-medium no-underline'>Books</Link>
-                <Link href="/Departments" className='text-[20px] text-black font-medium no-underline'>Departments</Link>
-                <Link href="/About" className='text-[20px] text-black font-medium no-underline'>About</Link>
-                <Link href="/Contact" className='text-[20px] text-black font-medium no-underline'>Contact</Link>
-                <Link href="/AddBook" className='text-[20px] text-black font-medium no-underline'>Add Book</Link>
-            </nav>
-
+        <nav className={`lg:flex hidden flex-row items-center justify-center gap-8 ${isActive ? 'flex-col items-center' : ''}`}>
+          <div className={`absolute top-6 right-8 cursor-pointer text-[#444] hidden ${isActive ? 'block' : ''}`} onClick={toggleNavbar}><FaRegWindowClose /></div>
+          <Link href='/' className='text-md text-white font-normal no-underline'>Home</Link>
+          <Link href="/About" className='text-md text-white font-normal no-underline'>About</Link>
+          <Link href="/Books" className='text-md text-white font-normal no-underline'>Store</Link>
+          <Link href="/Contact" className='text-md text-white font-normal no-underline'>Contact Us</Link>
+          <div className=' ml-20 px-4 py-2 rounded-md flex flex-row items-center justify-center gap-2 font-bold customShadow customWhite'><FaPenNib className='text-xl' /> Login</div>
+        </nav>
       </div>
 
       <div id="sidebar" className={`fixed top-0 left-[-250px] w-[250px] h-[100vh] bg-white text-black transition-all pt-[60px] flex flex-col items-center gap-4 ${isActive ? 'left-[0px]' : ''}`}>

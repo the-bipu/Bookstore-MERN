@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -25,7 +26,7 @@ body {
 }
 
 * {
-  font-family: 'Changa', sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -156,4 +157,45 @@ section {
 
 .transforN {
   transform: skewY(3deg);
+}
+
+/* Righteous Font */
+.righteous {
+  font-family: 'Righteous', sans-serif;
+}
+
+/* Custom Shadow */
+.customShadow {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* Custom Shadow Light */
+.customShadowLight {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+/* Transparent Button */
+.customBlue {
+  background: #5956E9;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.customBlue:hover {
+  color: #5956E9;
+  background-color: white;
+}
+
+/* Transparent Button */
+.customWhite {
+  color: #5956E9;
+  background-color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.customWhite:hover {
+  background: #5956E9;
+  color: white;
 }
