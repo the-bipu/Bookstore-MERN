@@ -7,6 +7,8 @@ import BookCardTotal from '@/components/BookCardTotal'
 import axios from 'axios'
 import Image from 'next/image';
 
+import { FaLongArrowAltRight, FaLongArrowAltLeft } from "react-icons/fa";
+
 function Hero() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -40,22 +42,31 @@ function Hero() {
 
       <div className='bg-[#FFEFE0] w-full h-auto flex flex-col items-center justify-center gap-10 py-24'>
         <div className='w-8/12 h-auto flex flex-row justify-between'>
-          <div className='w-4/12 h-auto text-4xl font-semibold flex flex-col'>
+          <div className='w-5/12 h-auto text-4xl font-semibold flex flex-col'>
             <span>About</span>
             <span>The eBookStore Center</span>
           </div>
-          <div className='w-4/12 h-auto font-normal text-base text-[#121212]'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis at exercitationem ex harum nemo quos recusandae aliquam quod odio eum!</div>
+          <div className='w-5/12 h-auto font-normal text-base text-[#121212]'>Unlock the world of knowledge with our university-level book platform, offering an extensive collection tailored to students' academic needs.</div>
         </div>
         <div className='w-8/12 h-auto bg-[#FAB8C4] flex flex-row items-center justify-between rounded-2xl'>
           <div className='w-4/12 h-full flex items-end justify-end relative'>
             <Image src={'/home/books-in-hand.png'} alt='' width={400} height={300} className='w-full' />
           </div>
-          <div className='w-8/12 h-full bg-white flex flex-row items-start justify-center m-5 rounded-2xl'>
-            <div className='flex flex-col items-center justify-center text-4xl font-semibold py-20 w-7/12'>
+          <div className='w-8/12 h-56 bg-white flex flex-row items-start justify-center m-5 rounded-2xl p-8 gap-4'>
+            <div className='flex flex-col items-start justify-center text-4xl font-semibold w-7/12 h-full'>
               <span>The</span>
               <span>eBookstore Center</span>
             </div>
-            <div className='w-5/12 h-auto flex items-center justify-center'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis rerum incidunt deleniti sit at itaque veniam excepturi nobis inventore quia, non dicta! Exercitationem laudantium quasi earum a fugit culpa autem.</div>
+            <div className='w-4/12 h-full flex flex-col items-start justify-center gap-4 pl-8'>
+              <div className='flex flex-col items-start justify-center'>
+                <span className='font-bold'>Author</span>
+                <span>eBookStore Library</span>
+              </div>
+              <div className='flex flex-col items-start justify-center'>
+                <span className='font-bold'>Books</span>
+                <span>Currently 0</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -66,12 +77,55 @@ function Hero() {
             <span className='text-4xl font-semibold'>New Arrivals</span>
             <span className='text-[#101010] font-normal'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
           </div>
-          <div className=''></div>
+          <div className='w-auto h-auto flex flex-row gap-2'>
+            <span className='bg-white text-[#5956E9] text-2xl w-12 h-12 rounded-full border-2 border-[#5956E9] cursor-pointer flex items-center justify-center'>
+              <FaLongArrowAltLeft />
+            </span>
+            <span className='bg-[#5956E9] text-white text-2xl w-12 h-12 rounded-full border-2 border-[#5956E9] cursor-pointer flex items-center justify-center'>
+              <FaLongArrowAltRight />
+            </span>
+          </div>
         </div>
         <div className='bg-white w-8/12 flex flex-row gap-8 items-center justify-center py-10 rounded-2xl customShadowLight'>
-          <div className=' w-44 h-56 bg-violet-400 rounded-2xl'></div>
-          <div className=' w-44 h-56 bg-red-400 rounded-2xl'></div>
-          <div className=' w-44 h-56 bg-green-400 rounded-2xl'></div>
+          <div className=' w-52 h-auto px-3 py-4 bg-[#FFEDDC] rounded-2xl flex flex-col items-center justify-center gap-4'>
+            <div className='bg-[#FAB8C4] w-24 h-24 rounded-full flex items-center justify-center'>
+              <Image src={'/books-3d.png'} alt='books logo' width={70} height={70} />
+            </div>
+            <div className='w-full h-auto bg-white p-4 rounded-lg'>
+              <div className='flex items-center justify-between w-full'>
+                <span>Title</span>
+                <span>Price</span>
+              </div>
+              <div>Subheading</div>
+              <button className='bg-white text-[#F0E1D4] border-2 border-[#F0E1D4] rounded-md mt-2'>View Book</button>
+            </div>
+          </div>
+          <div className=' w-52 h-auto px-3 py-4 bg-[#DBDEFF] rounded-2xl flex flex-col items-center justify-center gap-4'>
+            <div className='bg-[#5956E9] w-24 h-24 rounded-full flex items-center justify-center'>
+              <Image src={'/books-3d.png'} alt='books logo' width={70} height={70} />
+            </div>
+            <div className='w-full h-auto bg-white p-4 rounded-lg'>
+              <div className='flex items-center justify-between w-full'>
+                <span>Title</span>
+                <span>Price</span>
+              </div>
+              <div>Subheading</div>
+              <button className='bg-white text-[#F0E1D4] border-2 border-[#F0E1D4] rounded-md mt-2'>View Book</button>
+            </div>
+          </div>
+          <div className=' w-52 h-auto px-3 py-4 bg-[#DBF8FF] rounded-2xl flex flex-col items-center justify-center gap-4'>
+            <div className='bg-[#64B4FF] w-24 h-24 rounded-full flex items-center justify-center'>
+              <Image src={'/books-3d.png'} alt='books logo' width={70} height={70} />
+            </div>
+            <div className='w-full h-auto bg-white p-4 rounded-lg'>
+              <div className='flex items-center justify-between w-full'>
+                <span>Title</span>
+                <span>Price</span>
+              </div>
+              <div>Subheading</div>
+              <button className='bg-white text-[#F0E1D4] border-2 border-[#F0E1D4] rounded-md mt-2'>View Book</button>
+            </div>
+          </div>
         </div>
       </div>
 
