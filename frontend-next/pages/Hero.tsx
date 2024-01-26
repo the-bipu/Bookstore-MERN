@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import TotalDepartment from '@/components/TotalDepartment'
 import AboutSite from '@/components/AboutSite'
 import Parallax from '@/common/components/Parallax/Parallax'
@@ -12,6 +12,13 @@ import { FaLongArrowAltRight, FaLongArrowAltLeft } from "react-icons/fa";
 function Hero() {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
+  const firstSectionRef = useRef(null);
+  const secondSectionRef = useRef(null);
+  const thirdSectionRef = useRef(null);
+
+  const scrollToSection = (ref: any) => {
+    ref.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -29,18 +36,22 @@ function Hero() {
 
   return (
     <div className='bg-white'>
-      {/* Main Image of the Home Page and it's Content */}
-      <div className=' w-full h-auto flex flex-col items-center justify-center bg-[#5956E9] text-white text-center pt-44 mb-16'>
-        <div className='lg:w-8/12 w-11/12 lg:text-8xl text-4xl font-normal leading-loose mb-10 righteous'>Expand your mind, reading a book</div>
-        <div className='lg:w-1/2 w-11/12 text-xl font-normal mb-10'>Welcome to our book store website, where you can easily find the books that you need.</div>
+      {/* First Section */}
+      <div ref={firstSectionRef} className=' w-full h-auto flex flex-col items-center justify-center bg-[#5956E9] text-white text-center pt-44 mb-16'>
+        <div className='lg:w-8/12 w-11/12 lg:text-8xl text-4xl font-semibold leading-loose mb-10 lufga'>Expand your mind, reading a book</div>
+        <div className='lg:w-1/2 w-11/12 text-xl font-normal mb-10 lufga'>Welcome to our book store website, where you can easily find the books that you need.</div>
         <div className='flex flex-row gap-8'>
           <button className='px-6 py-3 text-base font-semibold rounded-md customWhite customShadow'>Explore More</button>
           <button className='px-6 py-3 text-base font-semibold rounded-md customBlue customShadow'>Add Books</button>
+          {/* <button onClick={() => scrollToSection(firstSectionRef)}>First Section</button>
+        <button onClick={() => scrollToSection(secondSectionRef)}>Second Section</button>
+        <button onClick={() => scrollToSection(thirdSectionRef)}>Third Section</button> */}
         </div>
         <Image src={'/home/3d-books.png'} alt='' width={900} height={600} className='relative w-7/12 -bottom-16' />
       </div>
 
-      <div className='bg-[#FFEFE0] w-full h-auto flex flex-col items-center justify-center gap-10 py-24'>
+      {/* Second Section */}
+      <div ref={secondSectionRef} className='bg-[#FFEFE0] w-full h-auto flex flex-col items-center justify-center gap-10 py-24'>
         <div className='w-8/12 h-auto flex flex-row justify-between'>
           <div className='w-5/12 h-auto text-4xl font-semibold flex flex-col'>
             <span>About</span>
@@ -71,7 +82,8 @@ function Hero() {
         </div>
       </div>
 
-      <div className='bg-[#F7F8F9] w-full h-auto flex flex-col items-center justify-center py-24 gap-10'>
+      {/* Third Section */}
+      <div ref={thirdSectionRef} className='bg-[#F7F8F9] w-full h-auto flex flex-col items-center justify-center py-24 gap-10'>
         <div className='w-8/12 h-auto flex flex-row justify-between'>
           <div className='flex flex-col items-start justify-center'>
             <span className='text-4xl font-semibold'>New Arrivals</span>
@@ -125,6 +137,19 @@ function Hero() {
               <div>Subheading</div>
               <button className='bg-white text-[#F0E1D4] border-2 border-[#F0E1D4] rounded-md mt-2'>View Book</button>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className='w-full h-auto bg-white flex items-center justify-center py-28'>
+        <div className='w-8/12 h-auto bg-[#5956E9] text-white flex flex-col gap-4 items-center justify-center py-12 rounded-3xl'>
+          <span className='text-md text-[#cacaca] font-light'>Contact Us</span>
+          <div className=' flex flex-col items-center justify-center gap-2 font-semibold text-6xl text-center capitalize'>
+            <span className='lufga'>Let's work on</span>
+            <span className='lufga'>something cool together</span>
+          </div>
+          <div className='py-10'>
+            <button className='px-6 py-3 text-base font-semibold rounded-md customWhite customShadow'>Sign Up</button>
           </div>
         </div>
       </div>
