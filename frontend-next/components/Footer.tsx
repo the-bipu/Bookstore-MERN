@@ -7,8 +7,8 @@ import { FaGithub, FaLinkedinIn, FaDribbble, FaTwitter, FaBehance } from "react-
 const Footer = () => {
   
   return (
-    <div id='footer-main' className="md:w-full w-[100%] h-auto text-black md:px-[5rem] px-0 py-[2.5rem]">
-        <div className='flex md:flex-row flex-col items-start justify-around flex-wrap md:p-0 p-6 md:gap-0 gap-6'>
+    <div id='footer-main' className="w-full h-auto flex items-center justify-center text-black py-[2.5rem] lufga">
+        <div className='flex md:flex-row flex-col items-start justify-between flex-wrap md:p-0 p-6 md:gap-0 gap-6 md:w-8/12 w-full'>
             <div className='md:w-[35%] w-auto flex flex-col gap-3'>
                 <div className='flex flex-row items-center gap-1 text-[22px]'>
                     {/* <IoHome className='mb-1' />  */}
@@ -27,33 +27,30 @@ const Footer = () => {
                 </div>
             </div>
             <div className='flex flex-col gap-2'>
-                <div className='text-[#bfbfbf] font-normal'>Our Info</div>
-                <div className='flex flex-col gap-1'>
-                    <a href='' className='font-normal text-[#000]'>College</a>
-                    <a href='' className='font-normal text-[#000]'>Departments</a>
-                    <a href='' className='font-normal text-[#000]'>Programmes</a>
-                    <a href='' className='font-normal text-[#000]'>E-Lib</a>
-                    <a href='/About' className='font-normal text-[#000]'>Website Team</a>
+                <div className='text-[#bfbfbf] font-normal'>Information</div>
+                <div className='flex flex-col gap-1 text-sm font-normal text-black'>
+                    <Link href=''>College</Link>
+                    <Link href=''>Departments</Link>
+                    <Link href=''>E-Lib</Link>
+                    <Link href='/About'>Website Team</Link>
                 </div>
             </div>
             <div className='flex flex-col gap-2'>
                 <div className='text-[#bfbfbf] font-normal'>Quick Links</div>
-                <div className='flex flex-col gap-1'>
-                    <a href='' className='font-normal text-[#000]'>Home</a>
-                    <a href='' className='font-normal text-[#000]'>Books</a>
-                    <a href='' className='font-normal text-[#000]'>Subjects</a>
-                    <a href='' className='font-normal text-[#000]'>About</a>
-                    <a href='' className='font-normal text-[#000]'>Contact</a>
+                <div className='flex flex-col gap-1 text-sm font-normal text-black'>
+                    <Link href=''>Home</Link>
+                    <Link href=''>About</Link>
+                    <Link href=''>Store</Link>
+                    <Link href=''>Contact</Link>
                 </div>
             </div>
             <div className='flex flex-col gap-2'>
-                <div className='text-[#bfbfbf] font-normal'>Extra Links</div>
-                <div className='flex flex-col gap-1'>
-                    <a href='' className='font-normal text-[#000]'>Sliet</a>
-                    <a href='' className='font-normal text-[#000]'>Sliet-LEET</a>
-                    <a href='' className='font-normal text-[#000]'>Ask questions</a>
-                    <a href='' className='font-normal text-[#000]'>Send Feedback</a>
-                    <a href='' className='font-normal text-[#000]'>Terms and conditions</a>
+                <div className='text-[#bfbfbf] font-normal'>Help</div>
+                <div className='flex flex-col gap-1 text-sm font-normal text-black'>
+                    <Link href=''>Sliet</Link>
+                    <Link href=''>Ask questions</Link>
+                    <Link href=''>Send Feedback</Link>
+                    <Link href=''>Terms and conditions</Link>
                 </div>
             </div>
         </div>

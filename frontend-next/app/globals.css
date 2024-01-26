@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url(https://db.onlinewebfonts.com/c/9df35b2045f6e32dcfa5bbc421ed05b1?family=Lufga+Regular);
 
 @tailwind base;
 @tailwind components;
@@ -20,7 +21,7 @@
 }
 
 body {
-  font-family: 'Changa', sans-serif;
+  font-family: "Lufga Regular";
   color: #000;
   background: #e8eeff;
 }
@@ -160,6 +161,11 @@ section {
 /* Righteous Font */
 .righteous {
   font-family: 'Righteous', sans-serif;
+}
+
+/* Lufga Font */
+.lufga {
+  font-family: "Lufga Regular";
 }
 
 /* Custom Shadow */
