@@ -111,30 +111,10 @@ section {
 .heading-link {
   text-align: center;
   background-color: #5956E9;
-  height: 300px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.heading-link h3 {
-  font-size: 2.2rem;
-  text-transform: capitalize;
-  color: #ffffff;
-}
-
-.heading-link p {
-  font-size: 1.2rem;
-  line-height: 2;
-  color: #ffffff;
-}
-
-.heading-link p a {
-  color: #dfdeff;
-}
-
-.heading-link p a:hover {
-  text-decoration: underline;
 }
 
 .heading {
