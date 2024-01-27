@@ -141,8 +141,8 @@ function Hero() {
         </div>
       </div>
 
-      <div className='w-full h-auto bg-white flex items-center justify-center py-28'>
-        <div className='w-8/12 h-auto bg-[#5956E9] text-white flex flex-col gap-4 items-center justify-center py-12 rounded-3xl'>
+      <div className='w-full h-auto bg-white flex items-center justify-center pt-24 pb-40'>
+        <div className='relative w-8/12 h-auto bg-[#5956E9] text-white flex flex-col gap-4 items-center justify-center py-12 rounded-3xl'>
           <span className='text-md text-[#cacaca] font-light'>Contact Us</span>
           <div className=' flex flex-col items-center justify-center gap-2 font-semibold text-6xl text-center capitalize'>
             <span className='lufga'>Let's work on</span>
@@ -150,6 +150,9 @@ function Hero() {
           </div>
           <div className='py-10'>
             <button className='px-6 py-3 text-base font-semibold rounded-md customWhite customShadow'>Sign Up</button>
+          </div>
+          <div className='relative w-full h-52 flex items-center justify-center'>
+          <Image src={'/home/team-casual.png'} alt='' width={450} height={300} className='absolute w-8/12 -bottom-40' />
           </div>
         </div>
       </div>
