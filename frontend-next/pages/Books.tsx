@@ -12,7 +12,7 @@ function Books() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get('http://localhost:5555/books/all')
+      .get('https://ebookstore-backend.vercel.app/books/all')
       .then((response) => {
         setBooks(response.data.data);
         console.log(books);

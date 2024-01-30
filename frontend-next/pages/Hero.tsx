@@ -23,7 +23,7 @@ function Hero() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get('http://localhost:5555/books/all')
+      .get('https://ebookstore-backend.vercel.app/books/all')
       .then((response) => {
         setBooks(response.data.data);
         setLoading(false);
@@ -152,7 +152,7 @@ function Hero() {
             <button className='px-6 py-3 text-base font-semibold rounded-md customWhite customShadow'>Sign Up</button>
           </div>
           <div className='relative w-full h-52 flex items-center justify-center'>
-          <Image src={'/home/team-casual.png'} alt='' width={450} height={300} className='absolute w-8/12 -bottom-40' />
+          <Image src={'/home/team-casual.png'} alt='' loading='lazy' width={450} height={300} className='absolute w-8/12 -bottom-40' />
           </div>
         </div>
       </div>
