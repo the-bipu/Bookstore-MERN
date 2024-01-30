@@ -1,5 +1,4 @@
 .cardDiv {
-
     .nameDiv {
         // display: none;
         border-bottom-left-radius: 6px;
@@ -17,7 +16,12 @@
   }
 }
 
+.cardShadow {
+  box-shadow: #e2ebf039 0px 2px 8px 0px;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
 #bookscard {
   width: 260px;
-  height: 340px;
+  height: auto;
 }
