@@ -24,7 +24,7 @@ const CreateBook = () => {
         };
         setLoading(true);
         axios
-            .post('https://ebookstore-backend.up.railway.app/books', data)
+            .post('https://ebookstore-backend.vercel.app/books', data)
             .then(() => {
                 setLoading(false);
                 enqueueSnackbar("Book created Successfully", { variant: 'success'});
