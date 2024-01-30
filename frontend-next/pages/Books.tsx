@@ -40,15 +40,15 @@ function Books() {
         </div>
       </div>
 
-      <div className='py-8 bg-white pt-32 pb-28'>
-        {/* <div className='lg:text-[25px] text-[20px] font-semibold mt-4 mb-4 text-black text-center'>
-          Our <span className='text-[#22CFB8]'>Book Store 🍃</span>
+      <div className='bg-white pt-32 pb-12 flex flex-col gap-4 items-center justify-center'>
+        <div className='font-medium text-base text-[#000] text-center capitalize'>
+          Explore the collection
         </div>
-        <div className='mb-8 text-black text-center'>
+        <div className='text-[#868686] font-light text-xl mb-8 lufga'>
           Presented herein are some of the most prevalent and sought-after sets in contemporary times.
         </div>
 
-        <BookCardTotal books={books} /> */}
+        <BookCardTotal books={books} />
       </div>
     </div>
   )
