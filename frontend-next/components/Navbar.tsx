@@ -44,9 +44,8 @@ const Navbar = () => {
 
         <Link href="/" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Home</Link>
         <Link href="/Books" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Books</Link>
-        <Link href="/Departments" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Departments</Link>
-        <Link href="/AboutPage" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>About</Link>
-        <Link href="/Contact" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Contact</Link>
+        <Link href="/About" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>About</Link>
+        <Link href="/Contact" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Contact Us</Link>
         <Link href="/Login" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Login</Link>
       </div>
 

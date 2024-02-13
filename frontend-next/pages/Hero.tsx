@@ -47,7 +47,7 @@ function Hero() {
         <button onClick={() => scrollToSection(secondSectionRef)}>Second Section</button>
         <button onClick={() => scrollToSection(thirdSectionRef)}>Third Section</button> */}
         </div>
-        <Image src={'/home/3d-books.png'} alt='' width={900} height={600} className='relative w-7/12 -bottom-16' />
+        <Image src="https://i.ibb.co/Ch5BW6T/3d-books.png" alt='3d Books Images' width={900} height={600} className='relative w-7/12 -bottom-16' />
       </div>
 
       {/* Second Section */}
@@ -61,7 +61,7 @@ function Hero() {
         </div>
         <div className='w-8/12 h-auto bg-[#FAB8C4] flex flex-row items-center justify-between rounded-2xl'>
           <div className='w-4/12 h-full flex items-end justify-end relative'>
-            <Image src={'/home/books-in-hand.png'} alt='' width={400} height={300} className='w-full' />
+            <Image src={'https://i.ibb.co/qWVh5dK/books-in-hand.png'} alt='' width={400} height={300} className='w-full' />
           </div>
           <div className='w-8/12 h-56 bg-white flex flex-row items-start justify-center m-5 rounded-2xl p-8 gap-4'>
             <div className='flex flex-col items-start justify-center text-4xl font-semibold w-7/12 h-full'>
@@ -152,7 +152,7 @@ function Hero() {
             <button className='px-6 py-3 text-base font-semibold rounded-md customWhite customShadow'>Sign Up</button>
           </div>
           <div className='relative w-full h-52 flex items-center justify-center'>
-          <Image src={'/home/team-casual.png'} alt='' loading='lazy' width={450} height={300} className='absolute w-8/12 -bottom-40' />
+          <Image src={'https://i.ibb.co/CB9Sy51/team-casual.png'} alt='' loading='lazy' width={450} height={300} className='absolute w-8/12 -bottom-40' />
           </div>
         </div>
       </div>
