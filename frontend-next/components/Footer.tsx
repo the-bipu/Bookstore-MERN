@@ -29,28 +29,28 @@ const Footer = () => {
             <div className='flex flex-col gap-2'>
                 <div className='text-[#bfbfbf] font-normal'>Information</div>
                 <div className='flex flex-col gap-1 text-sm font-normal text-black'>
-                    <Link href=''>College</Link>
-                    <Link href=''>Departments</Link>
-                    <Link href=''>E-Lib</Link>
-                    <Link href='/About'>Website Team</Link>
+                    <Link href='' className=' w-40 h-6'>College</Link>
+                    <Link href='' className=' w-40 h-6'>Departments</Link>
+                    <Link href='' className=' w-40 h-6'>E-Lib</Link>
+                    <Link href='/About' className=' w-40 h-6'>Website Team</Link>
                 </div>
             </div>
             <div className='flex flex-col gap-2'>
                 <div className='text-[#bfbfbf] font-normal'>Quick Links</div>
                 <div className='flex flex-col gap-1 text-sm font-normal text-black'>
-                    <Link href=''>Home</Link>
-                    <Link href=''>About</Link>
-                    <Link href=''>Store</Link>
-                    <Link href=''>Contact</Link>
+                    <Link href='' className=' w-40 h-6'>Home</Link>
+                    <Link href='' className=' w-40 h-6'>About</Link>
+                    <Link href='' className=' w-40 h-6'>Store</Link>
+                    <Link href='' className=' w-40 h-6'>Contact</Link>
                 </div>
             </div>
             <div className='flex flex-col gap-2'>
                 <div className='text-[#bfbfbf] font-normal'>Help</div>
                 <div className='flex flex-col gap-1 text-sm font-normal text-black'>
-                    <Link href=''>Sliet</Link>
-                    <Link href=''>Ask questions</Link>
-                    <Link href=''>Send Feedback</Link>
-                    <Link href=''>Terms and conditions</Link>
+                    <Link href='' className=' w-40 h-6'>Sliet</Link>
+                    <Link href='' className=' w-40 h-6'>Ask questions</Link>
+                    <Link href='' className=' w-40 h-6'>Send Feedback</Link>
+                    <Link href='' className=' w-40 h-6'>Terms and conditions</Link>
                 </div>
             </div>
         </div>
