@@ -7,6 +7,7 @@ import '../app/globals.css'
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { SnackbarProvider } from 'notistack'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,9 +19,11 @@ export const metadata: Metadata = {
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
+      <SnackbarProvider>
+        <Navbar />
+        <Component {...pageProps} />
+        <Footer />
+      </SnackbarProvider>
     </>
   )
 }

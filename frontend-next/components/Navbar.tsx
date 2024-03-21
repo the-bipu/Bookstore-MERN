@@ -30,9 +30,9 @@ const Navbar = () => {
         <nav className={`lg:flex hidden flex-row items-center justify-center gap-8 ${isActive ? 'flex-col items-center' : ''}`}>
           <div className={`absolute top-6 right-8 cursor-pointer text-[#444] hidden ${isActive ? 'block' : ''}`} onClick={toggleNavbar}><FaRegWindowClose /></div>
           <Link href='/' className='text-md text-white font-normal no-underline'>Home</Link>
-          <Link href="/About" className='text-md text-white font-normal no-underline'>About</Link>
-          <Link href="/Books" className='text-md text-white font-normal no-underline'>Store</Link>
-          <Link href="/Contact" className='text-md text-white font-normal no-underline'>Contact Us</Link>
+          <Link href="/about" className='text-md text-white font-normal no-underline'>About</Link>
+          <Link href="/books" className='text-md text-white font-normal no-underline'>Store</Link>
+          <Link href="/contact" className='text-md text-white font-normal no-underline'>Contact Us</Link>
           <div className=' ml-20 px-4 py-2 rounded-md flex flex-row items-center justify-center gap-2 font-bold customShadow customWhite'><FaPenNib className='text-xl' /> Login</div>
         </nav>
       </div>
