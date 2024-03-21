@@ -62,7 +62,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
 
   return (
     <>
-      <div key={book._id} id='bookscard' className=' relative h-auto w-56 px-3 py-4 bg-[#abc9e2] rounded-2xl flex flex-col items-center justify-center gap-4 cardShadow'>
+      <div key={book._id} id='bookscard' className=' relative h-auto w-56 p-4 pt-6 bg-[#abc9e2] rounded-2xl flex flex-col items-center justify-center gap-4 cardShadow'>
 
         <div className='bg-[#5956E9] w-24 h-24 rounded-full flex items-center justify-center'>
           <Image src={'/books-3d.png'} alt='books logo' width={70} height={70} />
@@ -80,36 +80,6 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
 
       </div>
     </>
-    // <div key={book._id} className={`relative bg-[#fff] flex flex-col w-[260px] h-[340px] shadow-xl rounded-md cardDiv`}>
-    //   <div>
-    //     <h2 className="absolute px-4 py-1 left-0 bg-black text-white rounded-lg z-10 m-2">
-    //       {book.publishyear}
-    //     </h2>
-    //     <Link href={`/Details/${book._id}`} className='absolute bg-slate-500 text-black rounded-lg px-4 py-1 m-2 right-0'>
-    //       Show More
-    //     </Link>
-
-    //     {/* <img src={`${book.imgLink}`} alt='image' className='w-[260px] h-[340px] object-cover z-5 rounded-md' /> */}
-
-    //     <div className={`w-full h-[4rem] absolute bottom-0 text-center bg-white nameDiv`}>
-    //       <h2 className="text-[1.3rem] font-semibold">{book.title}</h2>
-    //       <h2 className="text-[1rem]">{book.author}</h2>
-    //     </div>
-
-    //   </div>
-
-    //   {/* <div className='p-4 py-2 flex items-center justify-center flex-col'>
-    //     <div className="flex justify-start items-center flex-col">
-    //       <h2 className="my-1 text-[1.3rem] font-semibold">{book.title}</h2>
-    //       <h2 className="text-[1rem]">{book.author}</h2>
-    //     </div>
-
-    //     <button onClick={handleDeleteBook}>
-    //       <MdOutlineDelete className='text-2xl text-red-600' />
-    //     </button>
-    //   </div> */}
-
-    // </div>
   )
 }
 
