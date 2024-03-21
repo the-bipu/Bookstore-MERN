@@ -40,7 +40,7 @@ function Books() {
         </div>
       </div>
 
-      <div className='bg-white pt-32 pb-12 flex flex-col gap-4 items-center justify-center'>
+      <div className='bg-white pt-32 pb-20 flex flex-col gap-4 items-center justify-center'>
         <div className='font-medium text-base text-[#000] text-center capitalize'>
           Explore the collection
         </div>

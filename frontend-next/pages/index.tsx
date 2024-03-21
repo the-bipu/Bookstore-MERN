@@ -25,7 +25,7 @@ function Hero() {
     axios
       .get('https://ebookstore-backend.vercel.app/books/all')
       .then((response) => {
-        setBooks(response.data.data);
+        setBooks(response.data.data.slice(0, 3));
         setLoading(false);
       })
       .catch((error) => {
@@ -99,45 +99,7 @@ function Hero() {
           </div>
         </div>
         <div className='bg-white w-8/12 flex flex-row gap-8 items-center justify-center py-10 rounded-2xl customShadowLight'>
-          <div className=' w-52 h-auto px-3 py-4 bg-[#FFEDDC] rounded-2xl flex flex-col items-center justify-center gap-4'>
-            <div className='bg-[#FAB8C4] w-24 h-24 rounded-full flex items-center justify-center'>
-              <Image src={'/books-3d.png'} alt='books logo' width={70} height={70} />
-            </div>
-            <div className='w-full h-auto bg-white p-4 rounded-lg'>
-              <div className='flex items-center justify-between w-full'>
-                <span>Title</span>
-                <span>Price</span>
-              </div>
-              <div>Subheading</div>
-              <button className='bg-white text-[#F0E1D4] border-2 border-[#F0E1D4] rounded-md mt-2'>View Book</button>
-            </div>
-          </div>
-          <div className=' w-52 h-auto px-3 py-4 bg-[#DBDEFF] rounded-2xl flex flex-col items-center justify-center gap-4'>
-            <div className='bg-[#5956E9] w-24 h-24 rounded-full flex items-center justify-center'>
-              <Image src={'/books-3d.png'} alt='books logo' width={70} height={70} />
-            </div>
-            <div className='w-full h-auto bg-white p-4 rounded-lg'>
-              <div className='flex items-center justify-between w-full'>
-                <span>Title</span>
-                <span>Price</span>
-              </div>
-              <div>Subheading</div>
-              <button className='bg-white text-[#F0E1D4] border-2 border-[#F0E1D4] rounded-md mt-2'>View Book</button>
-            </div>
-          </div>
-          <div className=' w-52 h-auto px-3 py-4 bg-[#DBF8FF] rounded-2xl flex flex-col items-center justify-center gap-4'>
-            <div className='bg-[#64B4FF] w-24 h-24 rounded-full flex items-center justify-center'>
-              <Image src={'/books-3d.png'} alt='books logo' width={70} height={70} />
-            </div>
-            <div className='w-full h-auto bg-white p-4 rounded-lg'>
-              <div className='flex items-center justify-between w-full'>
-                <span>Title</span>
-                <span>Price</span>
-              </div>
-              <div>Subheading</div>
-              <button className='bg-white text-[#F0E1D4] border-2 border-[#F0E1D4] rounded-md mt-2'>View Book</button>
-            </div>
-          </div>
+          <BookCardTotal books={books} />
         </div>
       </div>
 
@@ -152,7 +114,7 @@ function Hero() {
             <button className='px-6 py-3 text-base font-semibold rounded-md customWhite customShadow'>Sign Up</button>
           </div>
           <div className='relative w-full h-52 flex items-center justify-center'>
-          <Image src={'https://i.ibb.co/CB9Sy51/team-casual.png'} alt='' loading='lazy' width={450} height={300} className='absolute w-8/12 -bottom-40' />
+            <Image src={'https://i.ibb.co/CB9Sy51/team-casual.png'} alt='' loading='lazy' width={450} height={300} className='absolute w-8/12 -bottom-40' />
           </div>
         </div>
       </div>
