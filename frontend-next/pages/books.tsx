@@ -1,57 +1,35 @@
-import BookCard from '@/common/components/BookCard/BookCard';
-import BookCardTotal from '@/components/BookCardTotal';
-import TotalDepartment from '@/components/TotalDepartment'
-import axios from 'axios';
-import Image from 'next/image';
-import React, { useEffect, useState } from 'react'
+import React from 'react';
 
-function Books() {
-  const [books, setBooks] = useState([]);
-  const [loading, setLoading] = useState(false);
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { BooksController } from '@/src/books/controller/BooksController';
+import BooksView from '@/src/books/View/BooksView';
 
-  useEffect(() => {
-    setLoading(true);
-    axios
-      .get('https://ebookstore-backend.vercel.app/books/all')
-      .then((response) => {
-        setBooks(response.data.data);
-        console.log(books);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        setLoading(false);
-      });
-  }, []);
+const BooksPage: NextPage = (props) => (
+  <div>
+    <BooksController {...props}>
+      <Head>
+        <link rel="icon" href="/books-main.png" type="image/png" sizes="70x70" />
+        <title></title>
+        <meta name="description" content="" />
 
-  return (
-    <div className='gradientLinear'>
-      <div className='heading-link'>
-        <div className=' w-8/12 flex flex-col gap-4 items-center justify-center pt-44 pb-10'>
-          <div className='lg:w-full w-11/12 lg:text-8xl text-4xl font-semibold leading-loose mb-6 lufga text-white '>Explore Our Diverse Book Collection</div>
-          <div className='lg:w-full w-11/12 text-xl font-normal mb-10 text-white lufga'>Discover a Wealth of Titles Across Various Genres and Departments in Our Library.</div>
-          <div className='flex flex-row gap-8'>
-            <button className='px-6 py-3 text-base font-semibold rounded-md customWhite customShadow'>Explore</button>
-            <button className='px-6 py-3 text-base font-semibold rounded-md customBlue customShadow'>Our Team</button>
-          </div>
-          <div className='lg:w-8/12 w-11/12 h-80 relative flex items-center justify-center'>
-            <Image src={'/store/books-city.png'} alt='' width={900} height={600} className=' absolute w-full -bottom-32' />
-          </div>
-        </div>
-      </div>
+        <meta name="keywords" content="" />
 
-      <div className='bg-white pt-32 pb-20 flex flex-col gap-4 items-center justify-center'>
-        <div className='font-medium text-base text-[#000] text-center capitalize'>
-          Explore the collection
-        </div>
-        <div className='text-[#868686] font-light text-xl mb-8 lufga'>
-          Presented herein are some of the most prevalent and sought-after sets in contemporary times.
-        </div>
+        <meta name="author" content="Internpluss.com" />
+        <meta property="og:title" content="" />
+        <meta property="og:description" content="" />
+        <meta property="og:image" content="/og/books-og.png" />
+        <meta property="og:url" content="" />
 
-        <BookCardTotal books={books} />
-      </div>
-    </div>
-  )
-}
+        <meta name="twitter:card" content="/og/twitter-og.png" />
+        <meta name="twitter:title" content="" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:image" content="/og/twitter-og.png" />
+      </Head>
 
-export default Books
+      <BooksView />
+    </BooksController>
+  </div>
+);
+
+export default BooksPage;
