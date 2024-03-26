@@ -2,7 +2,8 @@ import express, { request, response } from "express";
 import cors from 'cors';
 import mongoose from 'mongoose';
 import booksRoute from './routes/booksRoute.js';
-import courseBookRoute from './routes/courseBookRoute.js';
+import courseBooksRoute from './routes/courseBooksRoute.js';
+import tempBooksRoute from './routes/tempBooksRoute.js'
 import { URI, PORT } from './config.js';
 
 const app = express();
@@ -20,7 +21,8 @@ app.get('/', (request, response) => {
 });
 
 app.use('/books', booksRoute);
-app.use('/coursebook', courseBookRoute);
+app.use('/tempbooks', tempBooksRoute);
+app.use('/coursebook', courseBooksRoute);
 
 mongoose
     .connect(URI)

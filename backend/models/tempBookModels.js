@@ -1,8 +1,8 @@
 import mongoose, { mongo } from "mongoose";
 
-const courseBookSchema = mongoose.Schema(
+const tempBookSchema = mongoose.Schema(
     {
-        bookname: {
+        title: {
             type: String,
             required: true,
         },
@@ -10,20 +10,16 @@ const courseBookSchema = mongoose.Schema(
             type: String,
             required: true,
         },
-        branch: {
-            type: String,
-            required: true,
-        },
-        course: {
-            type: String,
-            required: true,
-        },
-        semester: {
-            type: Number,
-            required: true,
-        },
         imgLink: {
             type: String,
+            required: true,
+        },
+        driveLink: {
+            type: String,
+            required: true,
+        },
+        publishyear: {
+            type: Number,
             required: true,
         },
     },
@@ -32,4 +28,4 @@ const courseBookSchema = mongoose.Schema(
     }
 )
 
-export const courseBook = mongoose.model('courseBook', courseBookSchema);
+export const TempBook = mongoose.model('TempBook', tempBookSchema);

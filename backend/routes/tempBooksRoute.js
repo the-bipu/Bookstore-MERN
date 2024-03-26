@@ -1,60 +1,64 @@
 import express from 'express';
-import { courseBook } from '../models/courseBookModel.js';
+import { TempBook } from '../models/tempBookModels.js'
+import { Book } from '../models/bookModels.js';
 
 const router = express.Router();
 
 // Route for posting books to the db
-router.post('/addnew', async (request, response) => {
+router.post('/add', async (request, response) => {
     try {
-        if (!request.body.bookname)
+        if (!request.body.title || !request.body.author || !request.body.driveLink || !request.body.publishyear || !request.body.imgLink)
         {
             return response.status(400).send({
-                message: 'Send all required fields : title',
-            });
-        }
-        if (!request.body.author)
-        {
-            return response.status(400).send({
-                message: 'Send all required fields : author',
-            });
-        }
-        if (!request.body.branch)
-        {
-            return response.status(400).send({
-                message: 'Send all required fields : branch',
-            });
-        }
-        if (!request.body.course)
-        {
-            return response.status(400).send({
-                message: 'Send all required fields : course',
-            });
-        }
-        if (!request.body.semester)
-        {
-            return response.status(400).send({
-                message: 'Send all required fields : semester',
-            });
-        }
-        if (!request.body.imgLink)
-        {
-            return response.status(400).send({
-                message: 'Send all required fields : imgLink',
+                message: 'Send all required fields : title, author, imgLink and publishyear',
             });
         }
 
         const newBook = {
-            bookname: request.body.bookname,
+            title: request.body.title,
             author: request.body.author,
-            branch: request.body.branch,
-            course: request.body.course,
-            semester: request.body.semester,
+            driveLink: request.body.driveLink,
             imgLink: request.body.imgLink,
+            publishyear: request.body.publishyear,
         };
         
-        const book = await courseBook.create(newBook);
+        const book = await TempBook.create(newBook);
 
         return response.status(201).send(book);
+    } catch (error) {
+        console.log(error.message);
+        response.status(500).send({ message: error.message });
+    }
+});
+
+// Transition a temporary book to permanent book
+router.post('/transition/:id', async (request, response) => {
+    try {
+        const { id } = request.params;
+
+        // Find the temporary book by ID
+        const tempBook = await TempBook.findById(id);
+
+        if (!tempBook) {
+            return response.status(404).json({ message: "Temporary Book not found!" });
+        }
+
+        // Create a new permanent book based on the temporary book's data
+        const newBook = new Book({
+            title: tempBook.title,
+            author: tempBook.author,
+            driveLink: tempBook.driveLink,
+            imgLink: tempBook.imgLink,
+            publishyear: tempBook.publishyear
+        });
+
+        // Save the new book
+        await newBook.save();
+
+        // Remove the temporary book from the database
+        await TempBook.findByIdAndDelete(id);
+
+        return response.status(201).json({ message: "Temporary Book transitioned to Book successfully!", newBook });
     } catch (error) {
         console.log(error.message);
         response.status(500).send({ message: error.message });
@@ -64,7 +68,7 @@ router.post('/addnew', async (request, response) => {
 // Route for getting all books from the db
 router.get('/all', async (request, response) => {
     try {
-        const books = await courseBook.find({});
+        const books = await TempBook.find({});
 
         return response.status(200).json(
             {
@@ -82,7 +86,7 @@ router.get('/all', async (request, response) => {
 router.get('/details/:id', async (request, response) => {
     try {
         const { id } = request.params;
-        const book = await courseBook.findById(id);
+        const book = await TempBook.findById(id);
 
         return response.status(200).json(book);
     } catch (error) {
@@ -94,7 +98,7 @@ router.get('/details/:id', async (request, response) => {
 // Route for update a book
 router.put('/update/:id', async (request, response) => {
     try {
-        if (!request.body.bookname || !request.body.author || !request.body.branch || !request.body.course || !request.body.semester || !request.body.imgLink)
+        if (!request.body.title || !request.body.author || !request.body.publishyear || !request.body.driveLink)
         {
             return response.status(400).send({
                 message: 'Send all required fields : title, author, publishyear',
@@ -103,7 +107,7 @@ router.put('/update/:id', async (request, response) => {
 
         const { id } = request.params;
 
-        const result = await courseBook.findByIdAndUpdate(id, request.body);
+        const result = await TempBook.findByIdAndUpdate(id, request.body);
 
         if(!result){
             return response.status(404).json({ message: "Book not found !"});
@@ -122,7 +126,7 @@ router.delete('/delete/:id', async (request, response) => {
     try {
         const { id } = request.params;
 
-        const result = await courseBook.findByIdAndDelete(id);
+        const result = await TempBook.findByIdAndDelete(id);
 
         if(!result){
             return response.status(404).json({ message: "Book not found !"});
