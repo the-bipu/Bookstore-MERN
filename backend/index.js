@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import booksRoute from './routes/booksRoute.js';
 import courseBooksRoute from './routes/courseBooksRoute.js';
 import tempBooksRoute from './routes/tempBooksRoute.js'
+import userRoute from './routes/userRoute.js';
 import { URI, PORT } from './config.js';
 
 const app = express();
@@ -20,6 +21,7 @@ app.get('/', (request, response) => {
     return response.status(234).send('Welcome to the Main Page');
 });
 
+app.use('/users', userRoute);
 app.use('/books', booksRoute);
 app.use('/tempbooks', tempBooksRoute);
 app.use('/coursebook', courseBooksRoute);
