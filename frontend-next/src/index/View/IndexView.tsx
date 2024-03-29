@@ -91,7 +91,7 @@ const IndexView = () => {
 
                 <div className='w-full h-auto bg-white flex items-center justify-center pt-24 pb-40'>
                     <div className='relative w-8/12 h-auto bg-[#5956E9] text-white flex flex-col gap-4 items-center justify-center py-12 rounded-3xl'>
-                        <span className='text-md text-[#cacaca] font-light'>Contact Us</span>
+                        <span className='text-md text-[#ffffff] font-light'>Contact Us</span>
                         <div className=' flex flex-col items-center justify-center gap-2 font-semibold text-6xl text-center capitalize'>
                             <span className='lufga'>Let's work on</span>
                             <span className='lufga'>something cool together</span>

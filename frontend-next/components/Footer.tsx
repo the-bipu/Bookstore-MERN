@@ -27,7 +27,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='flex flex-col gap-2'>
-                <div className='text-[#bfbfbf] font-normal'>Information</div>
+                <div className='text-[#000] font-medium'>Information</div>
                 <div className='flex flex-col gap-1 text-sm font-normal text-black'>
                     <Link href='' className=' w-40 h-6'>College</Link>
                     <Link href='' className=' w-40 h-6'>Departments</Link>
@@ -36,7 +36,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='flex flex-col gap-2'>
-                <div className='text-[#bfbfbf] font-normal'>Quick Links</div>
+                <div className='text-[#000] font-medium'>Quick Links</div>
                 <div className='flex flex-col gap-1 text-sm font-normal text-black'>
                     <Link href='' className=' w-40 h-6'>Home</Link>
                     <Link href='' className=' w-40 h-6'>About</Link>
@@ -45,7 +45,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='flex flex-col gap-2'>
-                <div className='text-[#bfbfbf] font-normal'>Help</div>
+                <div className='text-[#000] font-medium'>Help</div>
                 <div className='flex flex-col gap-1 text-sm font-normal text-black'>
                     <Link href='' className=' w-40 h-6'>Sliet</Link>
                     <Link href='' className=' w-40 h-6'>Ask questions</Link>
