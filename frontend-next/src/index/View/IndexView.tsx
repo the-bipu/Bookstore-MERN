@@ -47,7 +47,7 @@ const IndexView = () => {
                     </div>
                     <div className='w-8/12 h-auto bg-[#FAB8C4] flex flex-row items-center justify-between rounded-2xl'>
                         <div className='w-4/12 h-full flex items-end justify-end relative'>
-                            <Image src={'https://i.ibb.co/qWVh5dK/books-in-hand.png'} alt='' width={400} height={300} className='w-full' />
+                            <Image src={`/home/books-hands.svg`} alt='' width={350} height={240} className='w-full h-auto' />
                         </div>
                         <div className='w-8/12 h-56 bg-white flex flex-row items-start justify-center m-5 rounded-2xl p-8 gap-4'>
                             <div className='flex flex-col items-start justify-center text-4xl font-semibold w-7/12 h-full'>
