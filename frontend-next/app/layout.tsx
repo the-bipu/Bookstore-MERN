@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 
 import './globals.css'
 import { SnackbarProvider } from 'notistack'
+import { UserProvider } from '@/common/context/userContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <SnackbarProvider>
-          {children}
-        </SnackbarProvider>
+        <UserProvider>
+          <SnackbarProvider>
+            {children}
+          </SnackbarProvider>
+        </UserProvider>
       </body>
     </html>
   )

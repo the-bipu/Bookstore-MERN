@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google'
 import '../app/globals.css'
 
 import { SnackbarProvider } from 'notistack'
+import { UserProvider } from '@/common/context/userContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,9 +18,11 @@ export const metadata: Metadata = {
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <SnackbarProvider>
-        <Component {...pageProps} />
-      </SnackbarProvider>
+      <UserProvider>
+        <SnackbarProvider>
+          <Component {...pageProps} />
+        </SnackbarProvider>
+      </UserProvider>
     </>
   )
 }

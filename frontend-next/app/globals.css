@@ -187,3 +187,7 @@ section {
   background: #5956E9;
   color: white;
 }
+
+.customBorder {
+  border: 1px solid #0000004d;
+}
