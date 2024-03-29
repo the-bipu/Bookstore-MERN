@@ -1,13 +1,16 @@
 'use client';
+import { UserContext } from '@/common/context/userContext';
 import Link from 'next/link'
-import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import React, { useContext, useState } from 'react';
 
-import { FaBars, FaRegWindowClose } from "react-icons/fa";
-import { FaPenNib } from "react-icons/fa";
+import { FaBars, FaRegWindowClose, FaUserAlt } from "react-icons/fa";
 import { GiBookStorm } from "react-icons/gi";
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
+  const { isLoggedIn, setLoggedIn, loggedInEmail, setLoggedInEmail, handleLogout } = useContext(UserContext);
+  const router = useRouter();
 
   const toggleNavbar = () => {
     setIsActive(!isActive);
@@ -29,11 +32,15 @@ const Navbar = () => {
 
         <nav className={`lg:flex hidden flex-row items-center justify-center gap-8 ${isActive ? 'flex-col items-center' : ''}`}>
           <div className={`absolute top-6 right-8 cursor-pointer text-[#444] hidden ${isActive ? 'block' : ''}`} onClick={toggleNavbar}><FaRegWindowClose /></div>
-          <Link href='/' className='text-md text-white font-normal no-underline'>Home</Link>
-          <Link href="/about" className='text-md text-white font-normal no-underline'>About</Link>
-          <Link href="/books" className='text-md text-white font-normal no-underline'>Store</Link>
-          <Link href="/contact" className='text-md text-white font-normal no-underline'>Contact Us</Link>
-          <div className=' ml-20 px-4 py-2 rounded-md flex flex-row items-center justify-center gap-2 font-bold customShadow customWhite'><FaPenNib className='text-xl' /> Login</div>
+          <Link href='/' className='text-md text-white transition-all font-normal hover:font-semibold hover:drop-shadow-md no-underline'>Home</Link>
+          <Link href="/about" className='text-md text-white transition-all font-normal hover:font-semibold hover:drop-shadow-md no-underline'>About</Link>
+          <Link href="/books" className='text-md text-white transition-all font-normal hover:font-semibold hover:drop-shadow-md no-underline'>Store</Link>
+          <Link href="/contact" className='text-md text-white transition-all font-normal hover:font-semibold hover:drop-shadow-md no-underline'>Contact Us</Link>
+          {isLoggedIn ? (
+            <div onClick={handleLogout} className=' ml-20 px-6 py-2 rounded-md flex flex-row items-center justify-center gap-2 font-bold customShadow customWhite'>Logout</div>
+          ) : (
+            <div onClick={() => router.push('/auth/login')} className=' ml-20 px-6 py-2 rounded-md flex flex-row items-center justify-center gap-2 font-bold customShadow customWhite'>Login</div>
+          )}
         </nav>
       </div>
 
