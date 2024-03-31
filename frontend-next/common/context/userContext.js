@@ -11,7 +11,7 @@ export const UserProvider = ({ children }) => {
   const [loggedInEmail, setLoggedInEmail] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
   const [loginData, setLoginData] = useState({ email: '', password: '' });
-  const [registerData, setRegisterData] = useState({ email: '', username: '', password: '' });
+  const [registerData, setRegisterData] = useState({ email: '', phone: '', password: '' });
   const [userData, setUserData] = useState({_id: '', email: '', role: '', fname: '' });
 
   const [loginPopUp, setLoginPopUp] = useState(false);

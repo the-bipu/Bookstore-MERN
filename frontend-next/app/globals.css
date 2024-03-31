@@ -175,6 +175,11 @@ section {
   border-bottom: 2px solid rgb(120, 120, 120);
 }
 
+/* Border Buttom */
+.borderButtomWhite {
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
 /* Transparent Button */
 .customWhite {
   color: #5956E9;
