@@ -1,6 +1,7 @@
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 const IndexController = (props?: any) => {
     const {
@@ -9,10 +10,30 @@ const IndexController = (props?: any) => {
     } = props;
 
     const [loading, setLoading] = useState<boolean>(false);
+    const [books, setBooks] = useState([]);
+    const [totalBooksCount, setTotalBooksCount] = useState(0);
+
+    useEffect(() => {
+        setLoading(true);
+        axios
+            .get('https://bookstorm-rsmvx03awqentulqskokde6yg.vercel.app/books/all')
+            .then((response) => {
+                setTotalBooksCount(response.data.data.length);
+                setBooks(response.data.data.slice(0, 3));
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.log(error);
+                setLoading(false);
+            });
+    }, []);
 
     const viewProps = {
         loading,
         setLoading,
+        books,
+        setBooks,
+        totalBooksCount,
     };
 
     const childrenWithProps = React.Children.map(children, (child) => {
