@@ -16,13 +16,15 @@ const Navbar = () => {
     setIsActive(!isActive);
   };
 
+  console.log(isLoggedIn);
+
   return (
 
     <div className={`absolute top-0 z-40 w-full h-[73px] flex items-center justify-center transition-colors duration-500 lg:z-50 lg:border-b bg-transparent ${isActive ? 'active' : ''}`}>
 
       <div className='w-9/12 h-full flex items-center justify-between text-center lg:px-[80px] px-[20px]'>
         <a href="/" className='text-2xl flex flex-row items-center justify-center gap-2 font-bold text-white righteous'>
-          <GiBookStorm /> 
+          <GiBookStorm />
           <span>BookStorm</span>
         </a>
 
@@ -50,10 +52,10 @@ const Navbar = () => {
         </div>
 
         <Link href="/" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Home</Link>
-        <Link href="/Books" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Books</Link>
-        <Link href="/About" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>About</Link>
-        <Link href="/Contact" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Contact Us</Link>
-        <Link href="/Login" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Login</Link>
+        <Link href="/books" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Books</Link>
+        <Link href="/about" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>About</Link>
+        <Link href="/contact" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Contact Us</Link>
+        <Link href="/login" className='text-[18px] text-black font-semibold no-underline hover:text-[#007bff]'>Login</Link>
       </div>
 
     </div>

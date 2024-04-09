@@ -1,5 +1,5 @@
 'use client';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import React, { createContext, useState, useEffect } from 'react';
 
 export const UserContext = createContext();
@@ -12,14 +12,14 @@ export const UserProvider = ({ children }) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [loginData, setLoginData] = useState({ email: '', password: '' });
   const [registerData, setRegisterData] = useState({ email: '', phone: '', password: '' });
-  const [userData, setUserData] = useState({_id: '', email: '', role: '', fname: '' });
+  const [userData, setUserData] = useState({ _id: '', email: '', role: '', fname: '' });
 
   const [loginPopUp, setLoginPopUp] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       if (isLoggedIn) {
-        const userUrl = `https://ip-backend-eight.vercel.app/users/${loggedInEmail}`;
+        const userUrl = `https://bookstorm-rsmvx03awqentulqskokde6yg.vercel.app/users/${loggedInEmail}`;
         try {
           const response = await fetch(userUrl);
           const data = await response.json();
@@ -53,7 +53,7 @@ export const UserProvider = ({ children }) => {
       setIsAdmin(true);
       console.log("isAdmin " + isAdmin);
     } else {
-        setIsAdmin(false);
+      setIsAdmin(false);
     }
   }, [userData.role]);
 
