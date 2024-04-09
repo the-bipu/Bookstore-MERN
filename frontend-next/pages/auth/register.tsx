@@ -1,22 +1,19 @@
 'use client';
-import React, { useContext, useEffect, useState } from 'react'
-import Image from 'next/image';
+import React, { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { useSnackbar } from 'notistack';
 import { UserContext } from '@/common/context/userContext';
-
 import { FaEye } from "react-icons/fa";
 import { IoArrowBackCircle } from 'react-icons/io5';
+import Image from 'next/image';
 
 const RegisterDiv = () => {
   const router = useRouter();
   const [showPass, setShowPass] = useState(false);
   const [loading, setLoading] = useState(false);
-  const forwardurl = router.query;
 
   const { enqueueSnackbar } = useSnackbar();
-
   const { isLoggedIn, setLoggedIn, loggedInEmail, setLoggedInEmail } = useContext(UserContext);
   const [registerData, setRegisterData] = useState({ email: '', password: '', phone: '', fname: '' });
 
@@ -64,7 +61,6 @@ const RegisterDiv = () => {
         setRegisterData({ email: '', password: '', phone: '', fname: '' });
         console.log(registerData);
       } else {
-        // window.alert(`Operation failed: ${result.message}`);
         setLoading(false);
         enqueueSnackbar("Error", { variant: 'error' });
         setRegisterData({ email: '', password: '', phone: '', fname: '' });

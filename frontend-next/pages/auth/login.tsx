@@ -85,7 +85,7 @@ const Login = () => {
   return (
     <>
       <Head>
-        <link rel="icon" href="/icon-main.svg" type="image/svg" sizes="70x70" />
+        <link rel="icon" href="/books.svg" type="image/svg" sizes="70x70" />
         <title>Login | BookStorm | 2024</title>
         <meta name="description" content="" />
       </Head>
@@ -144,7 +144,7 @@ const Login = () => {
             </div>
           </div>
           <div className='w-6/12 h-full flex flex-col items-center justify-center gap-6'>
-            <Image src={`/login/login.svg`} alt='peaceful place' width={500} height={800} className=' w-10/12 h-auto' />
+            <Image src={`/login/login.svg`} alt='peaceful place' width={500} height={800} className=' w-10/12 h-auto' priority={true} />
           </div>
         </div>
 
